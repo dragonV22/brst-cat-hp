@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRST CAT</title>
+    <link rel="stylesheet" href="styles/navbar.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar__logo">
+                    <a href="/">
+                        <img src="public/SVG/logo.svg" alt="BRST CAT Logo">
+                    </a>
+                </div>
+                
+                <nav class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li class="navbar__item">
+                            <a href="#about" class="navbar__link">About us</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#services" class="navbar__link">Services</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#recruit" class="navbar__link">Recruit</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#contact" class="navbar__link navbar__link--contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <button class="navbar__hamburger" aria-label="Toggle menu">
+                    <span class="navbar__hamburger-line"></span>
+                    <span class="navbar__hamburger-line"></span>
+                    <span class="navbar__hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__image">
+                    <img src="assets/top-kv1.png" alt="Team working together">
+                </div>
+                <div class="hero__text">
+                    <h1 class="hero__title">
+                        <span class="hero__title-line">新しい時代に適合した</span>
+                        <span class="hero__title-line">ソリューションで</span>
+                        <span class="hero__title-line">採用を創造する</span>
+                    </h1>
+                    <p class="hero__subtitle">Creating recruitment solutions suited to the new era</p>
+                </div>
+            </div>
+            <div class="hero__scroll">
+                <div class="scroll_circle_container">
+                    <svg class="scroll_text_circle" viewBox="0 0 500 500">
+                        <defs>
+                            <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+                        </defs>
+                        <text>
+                            <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
+                        </text>
+                    </svg>
+                    <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about__content">
+                <div class="about__left">
+                    <div class="about__image-wrapper">
+                        <img src="public/top-about.png" alt="About us illustration">
+                        <div class="about__title-overlay">
+                            <span class="about__subtitle-small">私たちについて</span>
+                            <h2 class="about__title-main">About us</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__right">
+                    <div class="about__description">
+                        <p>こちらに私たちについてのテキストが入ります。こちらに私たちについてのテキストが入ります。こちらに私たちについてのテキストが入ります。こちらに私たちについてのテキストが入ります。</p>
+                        <p>こちらに私たちについてのテキストが入ります。こちらに私たちについてのテキストが入ります。</p>
+                    </div>
+                    <div class="about__button">
+                        <a href="#about" class="btn-neumorphic">
+                            <span>View more</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services__content">
+                <div class="services__left">
+                    <div class="services__image-wrapper">
+                        <img src="assets/top-service.png" alt="Services illustration">
+                        <div class="services__title-overlay">
+                            <span class="services__subtitle-small">事業内容</span>
+                            <h2 class="services__title-main">Services</h2>
+                        </div>
+                    </div>
+                    <div class="services__description">
+                        <p>「deバイト」は、コンセプトカフェ専門の求人サイトです。</p>
+                        <p>採用課金型の求人メディアで、無駄なコストを使わず希望する人材を獲得できます。</p>
+                        <p>動線ボーナス制度で、スタッフの定着率もUPが可能です。</p>
+                        <p>従来の掲載費用型の広告メディアでコストが高騰し、お困りの企業様</p>
+                        <p>コンセプトカフェの採用をもっと楽しく、deバイトにお任せください。</p>
+                    </div>
+                    <div class="services__button">
+                        <a href="#services" class="btn-neumorphic">
+                            <span>View more</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="services__right">
+                    <img src="public/service.png" alt="Services illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cards Section -->
+    <section class="cards">
+        <div class="container">
+            <div class="cards__content">
+                <div class="card">
+                    <div class="card__content">
+                        <h3 class="card__title">Recruit</h3>
+                        <p class="card__subtitle">採用情報</p>
+                        <div class="card__button">
+                            <a href="#recruit" class="btn-circle">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__content">
+                        <h3 class="card__title">Contact</h3>
+                        <p class="card__subtitle">お問い合わせ</p>
+                        <div class="card__button">
+                            <a href="#contact" class="btn-circle">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="public/SVG/logo.svg" alt="BRST CAT Logo">
+                </div>
+                
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item">
+                            <a href="#about" class="footer__nav-link">About us</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#services" class="footer__nav-link">Services</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#recruit" class="footer__nav-link">Recruit</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#contact" class="footer__nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="footer__bottom">
+                    <div class="footer__privacy">
+                        <a href="#privacy" class="footer__privacy-link">Privacy policy</a>
+                    </div>
+                    <div class="footer__copyright">
+                        <p>© 2025 BRST CAT INC.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts/navbar.js"></script>
+</body>
+</html>
+

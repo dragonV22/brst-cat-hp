@@ -970,7 +970,7 @@ ul {
     align-items: center;
     
     @media (max-width: 768px) {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 

@@ -831,7 +831,7 @@ ul {
 }
 @media (max-width: 768px) {
   .services__button {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 

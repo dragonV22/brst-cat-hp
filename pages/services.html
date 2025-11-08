@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - BRST CAT</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar__logo">
+                    <a href="../index.html">
+                        <img src="../public/SVG/logo.svg" alt="BRST CAT Logo">
+                    </a>
+                </div>
+                
+                <nav class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li class="navbar__item">
+                            <a href="about.html" class="navbar__link">About us</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="services.html" class="navbar__link">Services</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#recruit" class="navbar__link">Recruit</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#contact" class="navbar__link navbar__link--contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <button class="navbar__hamburger" aria-label="Toggle menu">
+                    <span class="navbar__hamburger-line"></span>
+                    <span class="navbar__hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Services Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero__content">
+                <div class="about-hero__text">
+                    <h1 class="about-hero__title">Services</h1>
+                    <p class="about-hero__subtitle">事業内容</p>
+                </div>
+                <div class="about-hero__image">
+                    <img src="../assets/top-service.png" alt="Services illustration">
+                </div>
+            </div>
+            
+            <!-- Service Navigation Buttons -->
+            <div class="about-nav">
+                <a href="#debite" class="about-nav__button">
+                    <span class="about-nav__button-text">deバイト</span>
+                    <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <!-- <a href="#dummy" class="about-nav__button">
+                    <span class="about-nav__button-text">ダミー</span>
+                    <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a> -->
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="about-hero__scroll">
+                <div class="scroll_circle_container">
+                    <svg class="scroll_text_circle" viewBox="0 0 500 500">
+                        <defs>
+                            <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+                        </defs>
+                        <text>
+                            <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
+                        </text>
+                    </svg>
+                    <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- deバイト Section -->
+    <section id="debite" class="debite-section">
+        <div class="container">
+            <div class="debite-section__content">
+                <div class="debite-section__left">
+                    <div class="debite-section__header">
+                        <p class="debite-section__subtitle">
+                            コンカフェのバイト探しは
+                            <img src="../public/search.svg" alt="search" class="debite-section__search-icon">
+                        </p>
+                        <h2 class="debite-section__title">デバイト</h2>
+                        <p class="debite-section__tagline">個性を活かす、<br>最高のスタッフを。</p>
+                    </div>
+                    <div class="debite-section__description">
+                        <p>「deバイト」は、コンセプトカフェ専門の求人サイトです。</p>
+                        <p>採用課金型の求人メディアで、無駄なコストを使わず希望する人材を獲得できます。</p>
+                        <p>動線ボーナス制度で、スタッフの定着率もUPが可能です。</p>
+                        <p>従来の掲載費用型の広告メディアでコストが高騰し、お困りの企業様コンセプトカフェの採用をもっと楽しく、deバイトにお任せください。</p>
+                    </div>
+                </div>
+                <div class="debite-section__right">
+                    <img src="../public/service.png" alt="deバイト service monitor">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Points Section -->
+    <section class="points-section">
+        <div class="container">
+            <div class="points-section__header">
+                <p class="points-section__label">deバイトのポイント</p>
+                <h2 class="points-section__title">Point</h2>
+            </div>
+            
+            <div class="points-section__cards">
+                <div class="point-card">
+                    <div class="point-card__badge">POINT.01</div>
+                    <h3 class="point-card__title">採用課金型</h3>
+                    <p class="point-card__subtitle">採用課金型であるため、<br>無駄なコストがかかりません</p>
+                    <div class="point-card__divider"></div>
+                    <p class="point-card__description">採用が決定し、入社手続きが完了した時点で、デポジットから利用料金が引き落とされる仕組みです。そのため、希望するスキルや経験を持った人材をじっくりと探し、採用活動を進めることができます。</p>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-card__badge">POINT.02</div>
+                    <h3 class="point-card__title">定着率UP</h3>
+                    <p class="point-card__subtitle">3ヶ月働くと、勤続ボーナス<br>他サービスと比べてスタッフ定着率が高い</p>
+                    <div class="point-card__divider"></div>
+                    <p class="point-card__description">定着率をUPするために採用ボーナス制度を設けております。入社・アルバイト採用が決まり、3ヶ月経過すると、deバイト運営から採用者へ勤続ボーナスがプレゼントされ、定着率が期待できます。</p>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-card__badge">POINT.03</div>
+                    <h3 class="point-card__title">月額利用料なし</h3>
+                    <p class="point-card__subtitle">月額利用料はございません。<br>採用が決まった時にだけお支払い</p>
+                    <div class="point-card__divider"></div>
+                    <p class="point-card__description">企業様に出来る限り負担なく、deバイトをご利用いただきたい。その想いから初期費用・月額利用料はございません。採用が決まった時にだけ採用費用をいただいております。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Plan Section -->
+    <section class="plan-section">
+        <div class="container">
+            <div class="plan-section__header">
+                <p class="plan-section__label">プラン</p>
+                <h2 class="plan-section__title">Plan</h2>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="plan-pricing">
+                <div class="plan-pricing__card">
+                    <div class="plan-pricing__badge">初期費用・月額利用料・掲載費用</div>
+                    <p class="plan-pricing__amount">0<span class="plan-pricing__currency">円</span></p>
+                </div>
+                
+                <div class="plan-pricing__divider"></div>
+                
+                <div class="plan-pricing__card">
+                    <div class="plan-pricing__badge">採用料金（成果報酬）</div>
+                    <p class="plan-pricing__amount">75,000<span class="plan-pricing__currency">円</span></p>
+                </div>
+            </div>
+            
+            <p class="plan-pricing__note">申し込みがあるのにも関わらず、3ヶ月間採用がない場合は、利用料金として75,000円(税別)をお支払いいただけます。</p>
+            
+            <!-- Deposit Info -->
+            <div class="plan-deposit">
+                <div class="plan-deposit__left">
+                    <div class="plan-deposit__badge">デポジット金額におけるご利用店舗数</div>
+                    <p class="plan-deposit__amount">200,000<span class="plan-deposit__unit">円/店舗</span></p>
+                </div>
+                
+                <div class="plan-deposit__divider"></div>
+                
+                <div class="plan-deposit__right">
+                    <h3 class="plan-deposit__title">デポジット金額に応じてご利用できる店舗数が変動します</h3>
+                    <p class="plan-deposit__example">利用例：5店舗利用をご希望の際は、<br>200,000円×5店舗＝1,000,000円ご入金</p>
+                    <p class="plan-deposit__description">※ デポジットとは「一時的な預かり金」や「保証金」を指す言葉で、採用料金の未払いを防ぐ目的で導入させていただいております。</p>
+                    <p class="plan-deposit__description">※ デポジットの入金方法は、クレジットカードと銀行振り込みの2種類です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  
+    
+    <!-- Cards Section -->
+    <section class="cards">
+        <div class="container">
+            <div class="cards__content">
+                <div class="card">
+                    <div class="card__content">
+                        <h3 class="card__title">Recruit</h3>
+                        <p class="card__subtitle">採用情報</p>
+                        <div class="card__button">
+                            <a href="#recruit" class="btn-circle">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__content">
+                        <h3 class="card__title">Contact</h3>
+                        <p class="card__subtitle">お問い合わせ</p>
+                        <div class="card__button">
+                            <a href="#contact" class="btn-circle">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="../public/SVG/logo.svg" alt="BRST CAT Logo">
+                </div>
+                
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item">
+                            <a href="about.html" class="footer__nav-link">About us</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="services.html" class="footer__nav-link">Services</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#recruit" class="footer__nav-link">Recruit</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#contact" class="footer__nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="footer__bottom">
+                    <div class="footer__privacy">
+                        <a href="privacy.html" class="footer__privacy-link">Privacy policy</a>
+                    </div>
+                    <div class="footer__copyright">
+                        <p>© 2025 BRST CAT INC.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../scripts/navbar.js"></script>
+</body>
+</html>
+

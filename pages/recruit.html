@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruit - BRST CAT</title>
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header"
+    
+    >
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="navbar__logo">
+                    <img src="../public/SVG/logo.svg" alt="BRST CAT Logo">
+                </a>
+                
+                <div class="navbar__menu">
+                    <ul class="navbar__list">
+                        <li class="navbar__item">
+                            <a href="about.html" class="navbar__link">About us</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="services.html" class="navbar__link">Services</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="recruit.html" class="navbar__link navbar__link--active">Recruit</a>
+                        </li>
+                        <li class="navbar__item">
+                            <a href="#contact" class="navbar__link navbar__link--contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="navbar__hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Recruit Hero Section -->
+    <section class="recruit-hero">
+        <div class="container">
+            <div class="recruit-hero__content">
+                <div class="recruit-hero__text">
+                    <h1 class="recruit-hero__title">Recruit</h1>
+                    <p class="recruit-hero__subtitle">採用情報</p>
+                </div>
+                <div class="recruit-hero__image">
+                    <img src="../public/recruit-top.jpg" alt="Recruit">
+                </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <div class="recruit-nav">
+                <a href="#message" class="recruit-nav__button">
+                    <span class="recruit-nav__button-text">メッセージ</span>
+                    <svg class="recruit-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#positions" class="recruit-nav__button">
+                    <span class="recruit-nav__button-text">募集職種</span>
+                    <svg class="recruit-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="recruit-hero__scroll">
+                <div class="scroll_circle_container">
+                    <svg class="scroll_text_circle" viewBox="0 0 500 500">
+                        <defs>
+                            <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+                        </defs>
+                        <text>
+                            <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
+                        </text>
+                    </svg>
+                    <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Section -->
+    <section id="message" class="message-section">
+        <div class="container">
+            <div class="message-section__header">
+                <div class="message-section__line"></div>
+                <p class="message-section__label">メッセージ</p>
+            </div>
+            
+            <div class="message-section__content">
+                <div class="message-section__title-wrapper">
+                    <img src="../public/pc-message.png" alt="Your personality and skills will shape the future of the industry." class="message-section__title-image message-section__title-image--pc">
+                    <img src="../public/sp-message.png" alt="Your personality and skills will shape the future of the industry." class="message-section__title-image message-section__title-image--mobile">
+                </div>
+                
+                <div class="message-section__main">
+                    <div class="message-section__text">
+                        <p class="message-section__subtitle">あなたの個性とスキルが、業界の未来を生み出す。</p>
+                        
+                        <div class="message-section__description">
+                            <p>株式会社BRST CATは、コンセプトカフェ業界に特化した新しい採用サービス<br>「deバイト」を運営しています。</p>
+                            
+                            <p>私たちは、従来の採用プロセスが抱える課題を解決し、企業と求職者双方に<br>最適なマッチングを提供することを目指しています。新しい時代に適合したソ<br>リューションを共に創造できる新しい仲間を募集しています。</p>
+                            
+                            <p>私たちは、働く社員一人ひとりの声を大切にし、常<br>にサービスを改善し続けることを強みとしています。</p>
+                            
+                            <p>あなたのスキルと情熱を活かし、革新的なアイデアを形にしてみませんか？<br>エンジニア、営業、デザイナー、マーケター、事務職の各分野で、業界の未来を<br>共に創造していきましょう。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="message-section__images">
+                        <div class="message-section__image message-section__image--left">
+                            <img src="../public/recruit-1.jpg" alt="Team collaboration">
+                        </div>
+                        <div class="message-section__image message-section__image--right">
+                            <img src="../public/recruit-2.jpg" alt="Office environment">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job List Section -->
+    <section id="positions" class="job-list-section">
+        <div class="container">
+            <div class="job-list-section__header">
+                <div class="job-list-section__line"></div>
+                <p class="job-list-section__label">募集職種</p>
+            </div>
+            
+            <h2 class="job-list-section__title">Job list</h2>
+            
+            <div class="job-list">
+                <!-- Engineer -->
+                <div class="job-card">
+                    <button class="job-card__header" aria-expanded="false">
+                        <div class="job-card__title-wrapper">
+                            <h3 class="job-card__title">• Engineer</h3>
+                            <p class="job-card__subtitle">エンジニア</p>
+                        </div>
+                        <span class="job-card__toggle">+</span>
+                    </button>
+                    <div class="job-card__content">
+                        <p>あなたの個性とスキルで、コンセプトカフェ業界の未来を創造しませんか？deバイトは、採用に特化した革新的なウェブサービスです。従来の求人サイトが抱える課題を解決し、企業と求職者双方にとってより良いマッチングを実現するため、私たちは新しい機能と仕組みを日々生み出しています。</p>
+                        <p>フロントエンドエンジニアには、使いやすく魅力的なユーザーインターフェースの実装を、バックエンドエンジニアには、サービスの基盤を支える安定したシステムの構築をお任せします。あなたの技術力が、業界の常識を変える力になります。</p>
+                    </div>
+                </div>
+                
+                <!-- Sales -->
+                <div class="job-card">
+                    <button class="job-card__header" aria-expanded="false">
+                        <div class="job-card__title-wrapper">
+                            <h3 class="job-card__title">• Sales</h3>
+                            <p class="job-card__subtitle">営業</p>
+                        </div>
+                        <span class="job-card__toggle">+</span>
+                    </button>
+                    <div class="job-card__content">
+                        <p>コンセプトカフェの採用課題に、あなたの力でソリューションを提供しませんか？</p>
+                        <p>「deバイト」は、採用課金型と動機ボーナス制度という独自の仕組みで、無駄なコストをなくし、スタッフの定着率を向上させます。営業職として、コンセプトカフェの運営企業・店舗の採用課題を丁寧にヒアリングし、deバイトの価値を伝えていただきます。単に商品を売るだけでなく、お客様に寄り添い、業界の発展に貢献するやりがいのある仕事です。あなたのコミュニケーション能力が、deバイトの未来を創ります。</p>
+                    </div>
+                </div>
+                
+                <!-- Designer -->
+                <div class="job-card">
+                    <button class="job-card__header" aria-expanded="false">
+                        <div class="job-card__title-wrapper">
+                            <h3 class="job-card__title">• Designer</h3>
+                            <p class="job-card__subtitle">デザイナー</p>
+                        </div>
+                        <span class="job-card__toggle">+</span>
+                    </button>
+                    <div class="job-card__content">
+                        <p>コンセプトカフェの魅力を最大限に引き出し、deバイトのブランドをデザインしませんか？</p>
+                        <p>deバイトは、求職者にとって「楽しそう、働いてみたい」と思えるような、魅力的なサイト作りを目指しています。デザイナーとして、ウェブサイトのUI/UXデザインから、広告・プロモーション素材、サービスのブランディングまで、幅広く携わっていただきます。あなたのデザイン力で、deバイトの世界観を創り上げ、業界に新しい風を吹き込んでください。</p>
+                    </div>
+                </div>
+                
+                <!-- Marketer -->
+                <div class="job-card">
+                    <button class="job-card__header" aria-expanded="false">
+                        <div class="job-card__title-wrapper">
+                            <h3 class="job-card__title">• Marketer</h3>
+                            <p class="job-card__subtitle">マーケター</p>
+                        </div>
+                        <span class="job-card__toggle">+</span>
+                    </button>
+                    <div class="job-card__content">
+                        <p>deバイトの魅力を世の中に広め、新しいユーザーを生み出す仕組みを構築しませんか？</p>
+                        <p>「deバイト」は、単なる求人サイトではなく、コンセプトカフェ業界全体の活性化を目指すプラットフォームです。マーケターとして、集客戦略の立案・実行、データ分析、SNS運用など、多岐にわたる業務をお任せします。あなたのアイデアと分析力が、deバイトの成長を加速させる原動力となります。</p>
+                    </div>
+                </div>
+                
+                <!-- Clerical job -->
+                <div class="job-card">
+                    <button class="job-card__header" aria-expanded="false">
+                        <div class="job-card__title-wrapper">
+                            <h3 class="job-card__title">• Clerical job</h3>
+                            <p class="job-card__subtitle">事務職</p>
+                        </div>
+                        <span class="job-card__toggle">+</span>
+                    </button>
+                    <div class="job-card__content">
+                        <p>新しいサービスを、バックオフィスから支えませんか？</p>
+                        <p>「deバイト」がスムーズに運営されるためには、細やかで正確なサポートが不可欠です。事務職として、契約関連の書類作成、顧客データ管理、問い合わせ対応など、幅広い業務を通じてdeバイトの事業活動を支えていただきます。あなたのサポートが、deバイトの成長を支える土台となります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards">
+        <div class="container">
+            <div class="cards__content">
+                <div class="card">
+                    <div class="card__content">
+                        <h2 class="card__title">Recruit</h2>
+                        <p class="card__subtitle">採用情報</p>
+                        <a href="recruit.html" class="card__button btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__content">
+                        <h2 class="card__title">Contact</h2>
+                        <p class="card__subtitle">お問い合わせ</p>
+                        <a href="#contact" class="card__button btn-circle">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">
+                    <img src="../public/SVG/logo.svg" alt="BRST CAT Logo">
+                </div>
+                <nav class="footer__nav">
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item">
+                            <a href="about.html" class="footer__nav-link">About us</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="services.html" class="footer__nav-link">Services</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="recruit.html" class="footer__nav-link">Recruit</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="#contact" class="footer__nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <a href="privacy.html" class="footer__privacy-link">Privacy Policy</a>
+                <p class="footer__copyright">© 2024 BRST CAT Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/navbar.js"></script>
+</body>
+</html>
+

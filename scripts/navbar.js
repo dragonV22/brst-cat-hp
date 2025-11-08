@@ -51,5 +51,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    
+    // Job card accordion functionality (mobile only)
+    const jobCards = document.querySelectorAll('.job-card__header');
+    jobCards.forEach(header => {
+        header.addEventListener('click', function() {
+            // Only toggle on mobile
+            if (window.innerWidth <= 768) {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                const toggle = this.querySelector('.job-card__toggle');
+                
+                this.setAttribute('aria-expanded', !isExpanded);
+                
+                // Change icon between + and -
+                if (!isExpanded) {
+                    toggle.textContent = '−';
+                } else {
+                    toggle.textContent = '+';
+                }
+            }
+        });
+    });
 });
 

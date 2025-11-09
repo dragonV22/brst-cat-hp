@@ -15,6 +15,15 @@ $color-neuro-dark-2: #DCDCDC;
 $font-base: 'Yu Gothic', 'YuGothic', sans-serif;
 $font-title: 'Zen Kaku Gothic Antique', sans-serif;
 $font-english: 'DIN Condensed Bold', sans-serif;
+$font-din-narrow: 'DIN 2014 Narrow', sans-serif;
+
+// Font Face Declarations
+@font-face {
+    font-family: 'DIN 2014 Narrow';
+    src: url('../assets/fonts/DIN-2014_Narrow-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
 
 // Spacing (multiples of 4px)
 $spacing-unit: 4px;
@@ -225,9 +234,10 @@ ul {
 .navbar__list {
     display: flex;
     align-items: center;
-    gap: 0;
+    gap: 40px;
     margin: 0;
     padding: 0;
+    padding-inline: 40px;
     
     @media (max-width: 768px) {
         flex-direction: column;
@@ -241,7 +251,7 @@ ul {
 
 .navbar__link {
     display: inline-block;
-    padding: $spacing-unit * 5 $spacing-unit * 13; // 20px 52px
+    padding: $spacing-unit * 5 0; // 20px 52px
     font-family: $font-title;
     font-size: 17px;
     font-weight: 500;
@@ -309,8 +319,8 @@ ul {
     justify-content: center;
     align-items: center;
     gap: $spacing-unit * 2; // 8px between lines
-    width: $spacing-unit * 12; // 80px circular button (larger)
-    height: $spacing-unit * 12; // 80px circular button (larger)
+    width: $spacing-unit * 15; // 80px circular button (larger)
+    height: $spacing-unit * 15; // 80px circular button (larger)
     background: $color-bg;
     border: none;
     border-radius: 50%; // Circular
@@ -494,8 +504,8 @@ ul {
 }
 
 .scroll_circle_container {
-    width: 140px;
-    height: 140px;
+    width: 65px;
+    height: 65px;
     position: relative;
     display: flex;
     align-items: center;
@@ -504,8 +514,8 @@ ul {
     animation: float 3s ease-in-out infinite;
     
     @media (max-width: 768px) {
-        width: 120px;
-        height: 120px;
+        width: 60px;
+        height: 60px;
     }
     
     &:hover .scroll_text_circle {
@@ -539,7 +549,7 @@ ul {
     
     text {
         font-family: $font-title;
-        font-size: 30px;
+        font-size: 44px;
         font-weight: 600;
         letter-spacing: 0.15em;
         fill: $color-text;
@@ -548,8 +558,8 @@ ul {
 }
 
 .scroll_icon_img {
-    width: 32px;
-    height: 32px;
+    width: 16px;
+    height: 16px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -558,14 +568,14 @@ ul {
     z-index: 1;
     
     @media (max-width: 768px) {
-        width: 28px;
-        height: 28px;
+        width: 14px;
+        height: 14px;
     }
 }
 
 @media (max-width: 768px) {
     .scroll_text_circle text {
-        font-size: 30px;
+        // font-size: 13px;
         letter-spacing: 0.12em;
     }
 }
@@ -1205,8 +1215,13 @@ ul {
     
     @media (max-width: 768px) {
         min-height: auto;
-        padding: $spacing-unit * 15 0 $spacing-unit * 25; // 60px 0 100px
+        padding: $spacing-unit * 15 0 0; // 60px 0 100px
+        padding-top: $spacing-unit * 10; // 40px
     }
+}
+
+.services-hero {
+    padding-bottom: 0; // 80px
 }
 
 .about-hero__content {
@@ -1222,8 +1237,8 @@ ul {
     
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: $spacing-unit * 10; // 40px
-        margin-bottom: $spacing-unit * 15; // 60px
+        gap: 0; // 40px
+        margin-bottom: $spacing-unit * 10; // 60px
     }
 }
 
@@ -1240,26 +1255,26 @@ ul {
 
 .about-hero__title {
     font-family: $font-title;
-    font-size: 92px;
-    font-weight: 700;
+    font-size: 100px;
+    font-weight: 900;
     line-height: 1.2;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
     
     @media (max-width: 1024px) {
-        font-size: 72px;
+        font-size: 76px;
     }
     
     @media (max-width: 768px) {
-        font-size: 68px;
+        font-size: 74px;
     }
 }
 
 .about-hero__subtitle {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 800;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
@@ -1274,35 +1289,61 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    left: -20%;
     
     @media (max-width: 768px) {
         order: 1;
+        left: 0;
+        justify-content: flex-start;
     }
     
     img {
-        width: 100%;
+        width: 363px;
         height: auto;
-        max-width: 500px;
+        // max-width: 500px;
         object-fit: contain;
         
         @media (max-width: 768px) {
-            max-width: 350px;
+            max-width: 200px;
+
         }
     }
 }
 
-.about-hero__scroll {
-    position: absolute;
-    bottom: $spacing-unit * 10; // 40px
-    right: $spacing-unit * 10; // 40px
+.services-hero__image {
+    left: -10%;
+    @media (max-width: 768px) {
+        left: 0;
+    }
+        img {
+            width: 100%;
+            max-width: 300px;
+        }
+}
+
+// Wrapper for nav buttons and scroll indicator on same line
+.about-hero__navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-unit * 20; // 120px
+    gap: $spacing-unit * 10; // 40px
     
     @media (max-width: 768px) {
-        position: relative;
-        bottom: auto;
-        right: auto;
+        flex-direction: column;
+        gap: $spacing-unit * 15; // 60px
+        margin-bottom: $spacing-unit * 10; // 40px
+    }
+}
+
+.about-hero__scroll {
+    position: relative;
+    flex-shrink: 0;
+    
+    @media (max-width: 768px) {
         display: flex;
         justify-content: center;
-        margin-top: $spacing-unit * 15; // 60px
     }
 }
 
@@ -1313,8 +1354,8 @@ ul {
 .about-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: $spacing-unit * 4; // 16px
-    margin-bottom: $spacing-unit * 30; // 120px
+    gap: $spacing-unit * 5; // 20px
+    align-items: center;
     
     @media (max-width: 1024px) {
         gap: $spacing-unit * 3; // 12px
@@ -1325,7 +1366,7 @@ ul {
         grid-template-columns: 1fr 1fr; // 2 columns
         gap: $spacing-unit * 4; // 16px
         max-width: 100%;
-        margin: 0 auto $spacing-unit * 20; // Center and 80px bottom margin
+        margin: 0 auto; // Center on mobile
     }
 }
 
@@ -1335,7 +1376,7 @@ ul {
     align-items: center;
     justify-content: center;
     gap: $spacing-unit * 2; // 8px
-    padding: $spacing-unit * 4 $spacing-unit * 8; // 16px 32px
+    padding: $spacing-unit * 4 $spacing-unit * 9.5; // 16px 32px
     background: $color-bg;
     border-radius: $spacing-unit * 13; // 52px (more pill-shaped)
     text-decoration: none;
@@ -1344,6 +1385,7 @@ ul {
         6px 6px 16px rgba(220, 220, 220, 0.8),
         -6px -6px 16px rgba(255, 255, 255, 0.9);
     white-space: nowrap;
+    min-width: 188px;
     
     &:hover {
         transform: translateY(-2px);
@@ -1368,6 +1410,7 @@ ul {
         width: auto;
         justify-content: center;
         font-size: 16px;
+        min-width: 148px;
         
         &:nth-child(3) {
             grid-column: 1; // Third button on new row, left aligned
@@ -1387,7 +1430,7 @@ ul {
     }
     
     @media (max-width: 768px) {
-        font-size: 17px;
+        font-size: 14px;
     }
 }
 
@@ -1396,6 +1439,8 @@ ul {
     height: $spacing-unit * 4; // 16px
     color: $color-text;
     transition: transform 0.3s ease;
+    position: relative;
+    right: -10px;
 }
 
 // ===============================================
@@ -1405,6 +1450,7 @@ ul {
 .mission-section {
     padding: $spacing-unit * 30 0; // 120px top/bottom
     background: $color-bg;
+    padding-bottom: $spacing-unit * 40; // 160px
     
     @media (max-width: 768px) {
         padding: $spacing-unit * 20 0; // 80px top/bottom
@@ -1430,7 +1476,7 @@ ul {
 .mission-section__left {
     display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 6; // 24px
+    gap: $spacing-unit * 5; // 20px
     
     @media (max-width: 768px) {
         order: 1;
@@ -1451,17 +1497,19 @@ ul {
     }
     
     @media (max-width: 768px) {
-        font-size: 48px;
+        font-size: 60px;
+        font-weight: 800;
     }
 }
 
 .mission-section__subtitle {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 800;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
+    margin-bottom: $spacing-unit * 10; // 40px
     
     @media (max-width: 768px) {
         font-size: 15px;
@@ -1475,7 +1523,7 @@ ul {
     
     p {
         font-family: $font-base;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         line-height: 1.8;
         letter-spacing: $letter-spacing-base;
@@ -1517,6 +1565,7 @@ ul {
 .company-section {
     padding: $spacing-unit * 30 0; // 120px top/bottom
     background: #FFFFFF;
+    padding-top: $spacing-unit * 40; // 160px
     
     @media (max-width: 768px) {
         padding: $spacing-unit * 20 0; // 80px top/bottom
@@ -1545,15 +1594,15 @@ ul {
     flex-direction: column;
     gap: $spacing-unit * 2; // 8px
     
-    @media (max-width: 768px) {
-        margin-bottom: $spacing-unit * 6; // 24px
-    }
+    // @media (max-width: 768px) {
+    //     margin-bottom: $spacing-unit * 6; // 24px
+    // }
 }
 
 .company-section__title {
     font-family: $font-title;
-    font-size: 68px;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 800;
     line-height: 1.2;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -1564,17 +1613,19 @@ ul {
     }
     
     @media (max-width: 768px) {
-        font-size: 48px;
+        font-size: 60px;
+        font-weight: 800;
     }
 }
 
 .company-section__subtitle {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 800;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
+    margin-top: $spacing-unit * 5; // 20px
     
     @media (max-width: 768px) {
         font-size: 15px;
@@ -1591,7 +1642,7 @@ ul {
     display: grid;
     grid-template-columns: 200px 1fr;
     gap: $spacing-unit * 10; // 40px
-    padding: $spacing-unit * 8 0; // 32px top/bottom
+    padding: $spacing-unit * 7 0; // 28px top/bottom
     border-top: 1px solid rgba(0, 32, 47, 0.1);
     
     &:last-child {
@@ -1605,15 +1656,15 @@ ul {
     
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: $spacing-unit * 3; // 12px
-        padding: $spacing-unit * 6 0; // 24px top/bottom
+        gap: $spacing-unit * 2; // 12px
+        padding: $spacing-unit * 5 0; // 24px top/bottom
     }
 }
 
 .company-section__label {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     
@@ -1642,9 +1693,11 @@ ul {
 .access-section {
     padding: $spacing-unit * 30 0; // 120px top/bottom
     background: #FFFFFF;
+    padding-bottom: $spacing-unit * 60; // 240px
     
     @media (max-width: 768px) {
-        padding: $spacing-unit * 20 0; // 80px top/bottom
+        padding: $spacing-unit * 10 0; // 80px top/bottom
+        padding-bottom: $spacing-unit * 20; // 80px
     }
 }
 
@@ -1667,7 +1720,7 @@ ul {
 .access-section__left {
     display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 6; // 24px
+    gap: $spacing-unit * 5; // 24px
     
     @media (max-width: 768px) {
         order: 1;
@@ -1676,8 +1729,8 @@ ul {
 
 .access-section__title {
     font-family: $font-title;
-    font-size: 68px;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 800;
     line-height: 1.2;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -1688,27 +1741,30 @@ ul {
     }
     
     @media (max-width: 768px) {
-        font-size: 48px;
+        font-size: 60px;
+        font-weight: 800;
     }
 }
 
 .access-section__subtitle {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
+    margin-top: $spacing-unit * 5; // 20px
     
     @media (max-width: 768px) {
         font-size: 15px;
+        margin: 0;
     }
 }
 
 .access-section__info {
     display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 8; // 32px
+    gap: $spacing-unit * 7; // 28px
     margin-top: $spacing-unit * 4; // 16px
 }
 
@@ -1733,13 +1789,14 @@ ul {
 }
 
 .access-section__divider {
-    width: 100%;
+    width: 65%;
     max-width: 600px;
     height: 1px;
-    background: rgba(0, 32, 47, 0.15);
+    background: rgba(0, 32, 47, 1);
     
     @media (max-width: 768px) {
         max-width: 100%;
+        width: 100%;
     }
 }
 
@@ -1789,15 +1846,135 @@ ul {
 }
 
 // ===============================================
+// Services Hero Navigation (Services Page)
+// ===============================================
+
+// Wrapper for nav buttons and scroll indicator on same line
+.services-hero__navigation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0; // 80px
+    gap: $spacing-unit * 10; // 40px
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: $spacing-unit * 10; // 60px
+        padding-bottom: $spacing-unit * 10; // 40px
+        // margin-bottom: $spacing-unit * 20; // 80px
+    }
+}
+
+.services-hero__scroll {
+    position: relative;
+    flex-shrink: 0;
+    
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.services-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-unit * 5; // 20px
+    align-items: center;
+    
+    @media (max-width: 1024px) {
+        gap: $spacing-unit * 3; // 12px
+    }
+    
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr; // 2 columns
+        gap: $spacing-unit * 4; // 16px
+        max-width: 100%;
+        margin: 0 auto; // Center on mobile
+    }
+}
+
+.services-nav__button {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-unit * 2; // 8px
+    padding: $spacing-unit * 4 $spacing-unit * 9.5; // 16px 38px
+    background: $color-bg;
+    border-radius: $spacing-unit * 13; // 52px (more pill-shaped)
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        6px 6px 16px rgba(220, 220, 220, 0.8),
+        -6px -6px 16px rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+    min-width: 188px;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 
+            8px 8px 20px rgba(220, 220, 220, 0.9),
+            -8px -8px 20px rgba(255, 255, 255, 1);
+        
+        .services-nav__button-icon {
+            transform: translateY(2px);
+        }
+    }
+    
+    &:active {
+        transform: translateY(0px);
+        box-shadow: 
+            inset 4px 4px 10px rgba(220, 220, 220, 0.7),
+            inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+    }
+    
+    @media (max-width: 768px) {
+        padding: $spacing-unit * 4 $spacing-unit * 6; // 16px 24px
+        width: auto;
+        justify-content: center;
+        font-size: 16px;
+    }
+}
+
+.services-nav__button-text {
+    font-family: $font-title;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: $letter-spacing-title;
+    color: $color-text;
+    
+    @media (max-width: 1024px) {
+        font-size: 16px;
+    }
+    
+    @media (max-width: 768px) {
+        font-size: 17px;
+    }
+}
+
+.services-nav__button-icon {
+    width: $spacing-unit * 4; // 16px
+    height: $spacing-unit * 4; // 16px
+    color: $color-text;
+    transition: transform 0.3s ease;
+}
+
+.services-hero__image {
+    // Custom positioning for services hero image if needed
+}
+
+// ===============================================
 // Debite Section (Services Page)
 // ===============================================
 
 .debite-section {
-    padding: $spacing-unit * 30 0; // 120px top/bottom
+    padding: $spacing-unit * 60 0; // 120px top/bottom
     background: #FFFFFF;
     
     @media (max-width: 768px) {
         padding: $spacing-unit * 20 0; // 80px top/bottom
+        padding-top: $spacing-unit * 30; // 120px
     }
 }
 
@@ -1813,7 +1990,7 @@ ul {
     
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        gap: $spacing-unit * 10; // 40px
+        gap: $spacing-unit * 15; // 40px
     }
 }
 
@@ -1831,13 +2008,13 @@ ul {
 .debite-section__header {
     display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 3; // 12px
+    gap: $spacing-unit * 5; // 12px
 }
 
 .debite-section__subtitle {
-    font-family: $font-title;
-    font-size: 18px;
-    font-weight: 500;
+    font-family: 'Noto Sans JP', $font-title;
+    font-size: 20px;
+    font-weight: 700;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
@@ -1864,11 +2041,13 @@ ul {
 
 .debite-section__title {
     font-family: $font-title;
-    font-size: 72px;
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    color: $color-text;
+    // font-size: 72px;
+    width: 284px;
+    height: auto;
+    // font-weight: 700;
+    // line-height: 1.1;
+    // letter-spacing: 0.02em;
+    // color: $color-text;
     margin: 0;
     
     @media (max-width: 1024px) {
@@ -1881,9 +2060,9 @@ ul {
 }
 
 .debite-section__tagline {
-    font-family: $font-title;
-    font-size: 24px;
-    font-weight: 600;
+    font-family: $font-base;
+    font-size: 28px;
+    font-weight: 700;
     line-height: 1.6;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -1894,18 +2073,26 @@ ul {
     }
     
     @media (max-width: 768px) {
-        font-size: 18px;
+        font-size: 24px;
+        padding-top: $spacing-unit * 5; // 40px
+    }
+}
+
+.debite-section__tagline-br {
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
     }
 }
 
 .debite-section__description {
     display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 5; // 20px
+    gap: $spacing-unit * 3; // 20px
     
     p {
         font-family: $font-base;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 400;
         line-height: 1.8;
         letter-spacing: $letter-spacing-base;
@@ -1921,8 +2108,9 @@ ul {
 .debite-section__right {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
+    
     
     @media (max-width: 768px) {
         order: 2;
@@ -1932,6 +2120,7 @@ ul {
         width: 100%;
         height: auto;
         object-fit: contain;
+        max-width: 448px;
     }
 }
 
@@ -1941,7 +2130,9 @@ ul {
 
 .points-section {
     padding: $spacing-unit * 30 0; // 120px top/bottom
+    padding-bottom: $spacing-unit * 40; // 4*60 
     background: #FFFFFF;
+    padding-top: 0;
     
     @media (max-width: 768px) {
         padding: $spacing-unit * 20 0; // 80px top/bottom
@@ -1952,7 +2143,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: $spacing-unit * 2; // 8px
-    margin-bottom: $spacing-unit * 15; // 60px
+    margin-bottom: $spacing-unit * 20; // 60px
     
     @media (max-width: 768px) {
         margin-bottom: $spacing-unit * 10; // 40px
@@ -1961,8 +2152,8 @@ ul {
 
 .points-section__label {
     font-family: $font-title;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 800;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
@@ -1981,7 +2172,7 @@ ul {
     }
     
     @media (max-width: 768px) {
-        font-size: 13px;
+        // font-size: 13px;
         padding-left: $spacing-unit * 8; // 32px
         
         &::before {
@@ -1992,20 +2183,20 @@ ul {
 
 .points-section__title {
     font-family: $font-title;
-    font-size: 56px;
-    font-weight: 700;
+    font-size: 60px;
+    font-weight: 900;
     line-height: 1.2;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
     
-    @media (max-width: 1024px) {
-        font-size: 48px;
-    }
+    // @media (max-width: 1024px) {
+    //     font-size: 48px;
+    // }
     
-    @media (max-width: 768px) {
-        font-size: 40px;
-    }
+    // @media (max-width: 768px) {
+    //     font-size: 40px;
+    // }
 }
 
 .points-section__cards {
@@ -2026,42 +2217,52 @@ ul {
 .point-card {
     background: #FFFFFF;
     padding: $spacing-unit * 10; // 40px
+    padding-inline: $spacing-unit * 5; // 40px
+    padding-right: 30px; // 40px
     border: 2px solid $color-text;
-    border-radius: $spacing-unit * 2; // 8px
+    // border-radius: $spacing-unit * 4; // 16px
     border-bottom-width: 4px;
     display: flex;
     flex-direction: column;
     gap: $spacing-unit * 4; // 16px
     position: relative;
+    align-items: center;
+    box-shadow: 8px 8px 0px $color-text; // Drop shadow matching design
     
-    &::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: $spacing-unit * 3; // 12px
-        background: $color-text;
-        border-radius: 0 $spacing-unit * 1.25 $spacing-unit * 1.25 0; // Match card radius
-    }
+    // &::after {
+    //     content: '';
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0;
+    //     bottom: 0;
+    //     width: $spacing-unit * 3; // 12px
+    //     background: $color-text;
+    //     border-radius: 0 $spacing-unit * 3 $spacing-unit * 3 0; // Match card radius
+    // }
     
     @media (max-width: 768px) {
         padding: $spacing-unit * 8; // 32px
         gap: $spacing-unit * 3; // 12px
+        // border-radius: $spacing-unit * 3; // 12px on mobile
+        box-shadow: 8px 8px 0px $color-text; // Smaller shadow on mobile
+        
+        // &::after {
+        //     border-radius: 0 $spacing-unit * 2.5 $spacing-unit * 2.5 0; // Adjust for mobile radius
+        // }
     }
 }
 
 .point-card__badge {
     background: $color-text;
     color: #FFFFFF;
-    font-family: $font-title;
-    font-size: 12px;
+    font-family: $font-base;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.05em;
-    padding: $spacing-unit * 1.5 $spacing-unit * 4; // 6px 16px
+    padding: 0 $spacing-unit * 4; // 6px 16px
     border-radius: $spacing-unit * 4; // 16px (pill shape)
     display: inline-block;
-    align-self: flex-start;
+    // align-self: flex-start;
     
     @media (max-width: 768px) {
         font-size: 11px;
@@ -2069,7 +2270,7 @@ ul {
 }
 
 .point-card__title {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: $letter-spacing-title;
@@ -2086,13 +2287,14 @@ ul {
 }
 
 .point-card__subtitle {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 14px;
     font-weight: 500;
     line-height: 1.6;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
+    text-align: center;
     
     @media (max-width: 768px) {
         font-size: 13px;
@@ -3172,8 +3374,9 @@ ul {
 
 .plan-section {
     padding: $spacing-unit * 30 0; // 120px top/bottom
-    background: #FFFFFF;
-    
+    background: $color-bg;
+    padding-top: $spacing-unit * 15;
+
     @media (max-width: 768px) {
         padding: $spacing-unit * 20 0; // 80px top/bottom
     }
@@ -3182,8 +3385,8 @@ ul {
 .plan-section__header {
     display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 2; // 8px
-    margin-bottom: $spacing-unit * 15; // 60px
+    gap: $spacing-unit * 5; // 8px
+    margin-bottom: $spacing-unit * 10; // 60px
     
     @media (max-width: 768px) {
         margin-bottom: $spacing-unit * 10; // 40px
@@ -3191,8 +3394,8 @@ ul {
 }
 
 .plan-section__label {
-    font-family: $font-title;
-    font-size: 14px;
+    font-family: $font-base;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -3223,7 +3426,7 @@ ul {
 
 .plan-section__title {
     font-family: $font-title;
-    font-size: 56px;
+    font-size: 60px;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: $letter-spacing-title;
@@ -3235,7 +3438,21 @@ ul {
     }
     
     @media (max-width: 768px) {
-        font-size: 40px;
+        font-size: 60px;
+        font-weight: 900;
+    }
+}
+
+.plan-pricing__container{
+    background: $color-bg;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: $spacing-unit * 3; // 12px
+    padding: $spacing-unit * 15; // 60px
+    padding-bottom: $spacing-unit * 10; // 60px
+    margin-bottom: $spacing-unit * 10; // 24px
+
+    @media (max-width: 768px) {
+     padding-inline: $spacing-unit * 4; // 40px
     }
 }
 
@@ -3244,15 +3461,11 @@ ul {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: stretch;
-    background: #FFFFFF;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-radius: $spacing-unit * 3; // 12px
-    padding: $spacing-unit * 15; // 60px
-    margin-bottom: $spacing-unit * 6; // 24px
+
     
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        padding: $spacing-unit * 8; // 32px
+        padding: 0; // 32px
         gap: $spacing-unit * 6; // 24px
     }
 }
@@ -3268,22 +3481,25 @@ ul {
 .plan-pricing__badge {
     background: $color-text;
     color: #FFFFFF;
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 0.03em;
-    padding: $spacing-unit * 2 $spacing-unit * 6; // 8px 24px
+    padding: $spacing-unit * 0.5 $spacing-unit * 2.5; // 8px 24px
     border-radius: 0;
-    display: inline-block;
+    display: flex;
+    min-width: 240px;
+    justify-content: center;
     
     @media (max-width: 768px) {
         font-size: 13px;
-        padding: $spacing-unit * 2 $spacing-unit * 4; // 8px 16px
+        width: 100%;
+        padding: $spacing-unit * 1.5 $spacing-unit * 4; // 8px 16px
     }
 }
 
 .plan-pricing__amount {
-    font-family: $font-title;
+    font-family: $font-din-narrow;
     font-size: 80px;
     font-weight: 700;
     line-height: 1;
@@ -3300,9 +3516,10 @@ ul {
 }
 
 .plan-pricing__currency {
-    font-size: 28px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 900;
     margin-left: $spacing-unit * 1; // 4px
+    font-family: $font-base;
     
     @media (max-width: 768px) {
         font-size: 24px;
@@ -3326,13 +3543,15 @@ ul {
     line-height: 1.7;
     letter-spacing: $letter-spacing-base;
     color: $color-text;
-    margin: 0 0 $spacing-unit * 15; // 60px bottom
+    margin-top: $spacing-unit * 13;
+    // margin: 0 0 $spacing-unit * 15; // 60px bottom
     text-align: center;
     
     @media (max-width: 768px) {
         font-size: 13px;
-        margin-bottom: $spacing-unit * 12; // 48px
+        // margin-bottom: $spacing-unit * 12; // 48px
         text-align: left;
+        // margin-bottom: 0;
     }
 }
 
@@ -3344,11 +3563,11 @@ ul {
     background: #FFFFFF;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     border-radius: $spacing-unit * 3; // 12px
-    padding: $spacing-unit * 15; // 60px
+    padding: $spacing-unit * 10; // 60px
     
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
-        padding: $spacing-unit * 8; // 32px
+        padding: $spacing-unit * 10 $spacing-unit * 5; // 32px
         gap: $spacing-unit * 6; // 24px
     }
 }
@@ -3358,17 +3577,17 @@ ul {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: $spacing-unit * 4; // 16px
+    gap: $spacing-unit * 6; // 16px
 }
 
 .plan-deposit__badge {
     background: $color-text;
     color: #FFFFFF;
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.03em;
-    padding: $spacing-unit * 2 $spacing-unit * 4; // 8px 16px
+    padding: $spacing-unit * 0.5 $spacing-unit * 4.5; // 8px 16px
     border-radius: 0;
     display: inline-block;
     text-align: center;
@@ -3379,29 +3598,30 @@ ul {
 }
 
 .plan-deposit__amount {
-    font-family: $font-title;
-    font-size: 64px;
+    font-family: $font-din-narrow;
+    font-size: 80px;
     font-weight: 700;
     line-height: 1;
     color: $color-text;
     margin: 0;
     
     @media (max-width: 1024px) {
-        font-size: 56px;
+        font-size: 64px;
     }
     
     @media (max-width: 768px) {
-        font-size: 48px;
+        font-size: 56px;
     }
 }
 
 .plan-deposit__unit {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 900;
     margin-left: $spacing-unit * 1; // 4px
+    font-family: $font-base;
     
     @media (max-width: 768px) {
-        font-size: 18px;
+        font-size: 24px;
     }
 }
 
@@ -3423,9 +3643,9 @@ ul {
 }
 
 .plan-deposit__title {
-    font-family: $font-title;
+    font-family: $font-base;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.6;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -3438,8 +3658,8 @@ ul {
 
 .plan-deposit__example {
     font-family: $font-base;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 800;
     line-height: 1.7;
     letter-spacing: $letter-spacing-base;
     color: $color-text;

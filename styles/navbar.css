@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "DIN 2014 Narrow";
+  src: url("../assets/fonts/DIN-2014_Narrow-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -114,9 +120,10 @@ ul {
 .navbar__list {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 40px;
   margin: 0;
   padding: 0;
+  padding-inline: 40px;
 }
 @media (max-width: 768px) {
   .navbar__list {
@@ -131,7 +138,7 @@ ul {
 
 .navbar__link {
   display: inline-block;
-  padding: 20px 52px;
+  padding: 20px 0;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
   font-size: 17px;
   font-weight: 500;
@@ -185,8 +192,8 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   background: #F8F8F8;
   border: none;
   border-radius: 50%;
@@ -358,8 +365,8 @@ ul {
 }
 
 .scroll_circle_container {
-  width: 140px;
-  height: 140px;
+  width: 65px;
+  height: 65px;
   position: relative;
   display: flex;
   align-items: center;
@@ -369,8 +376,8 @@ ul {
 }
 @media (max-width: 768px) {
   .scroll_circle_container {
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
   }
 }
 .scroll_circle_container:hover .scroll_text_circle {
@@ -401,7 +408,7 @@ ul {
 }
 .scroll_text_circle text {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 30px;
+  font-size: 44px;
   font-weight: 600;
   letter-spacing: 0.15em;
   fill: #00202F;
@@ -409,8 +416,8 @@ ul {
 }
 
 .scroll_icon_img {
-  width: 32px;
-  height: 32px;
+  width: 16px;
+  height: 16px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -420,14 +427,13 @@ ul {
 }
 @media (max-width: 768px) {
   .scroll_icon_img {
-    width: 28px;
-    height: 28px;
+    width: 14px;
+    height: 14px;
   }
 }
 
 @media (max-width: 768px) {
   .scroll_text_circle text {
-    font-size: 30px;
     letter-spacing: 0.12em;
   }
 }
@@ -1053,8 +1059,13 @@ ul {
 @media (max-width: 768px) {
   .about-hero {
     min-height: auto;
-    padding: 60px 0 100px;
+    padding: 60px 0 0;
+    padding-top: 40px;
   }
+}
+
+.services-hero {
+  padding-bottom: 0;
 }
 
 .about-hero__content {
@@ -1072,8 +1083,8 @@ ul {
 @media (max-width: 768px) {
   .about-hero__content {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 60px;
+    gap: 0;
+    margin-bottom: 40px;
   }
 }
 
@@ -1091,8 +1102,8 @@ ul {
 
 .about-hero__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 92px;
-  font-weight: 700;
+  font-size: 100px;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -1100,19 +1111,19 @@ ul {
 }
 @media (max-width: 1024px) {
   .about-hero__title {
-    font-size: 72px;
+    font-size: 76px;
   }
 }
 @media (max-width: 768px) {
   .about-hero__title {
-    font-size: 68px;
+    font-size: 74px;
   }
 }
 
 .about-hero__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
@@ -1128,45 +1139,71 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  left: -20%;
 }
 @media (max-width: 768px) {
   .about-hero__image {
     order: 1;
+    left: 0;
+    justify-content: flex-start;
   }
 }
 .about-hero__image img {
-  width: 100%;
+  width: 363px;
   height: auto;
-  max-width: 500px;
   object-fit: contain;
 }
 @media (max-width: 768px) {
   .about-hero__image img {
-    max-width: 350px;
+    max-width: 200px;
+  }
+}
+
+.services-hero__image {
+  left: -10%;
+}
+@media (max-width: 768px) {
+  .services-hero__image {
+    left: 0;
+  }
+}
+.services-hero__image img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.about-hero__navigation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .about-hero__navigation-wrapper {
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 40px;
   }
 }
 
 .about-hero__scroll {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
+  position: relative;
+  flex-shrink: 0;
 }
 @media (max-width: 768px) {
   .about-hero__scroll {
-    position: relative;
-    bottom: auto;
-    right: auto;
     display: flex;
     justify-content: center;
-    margin-top: 60px;
   }
 }
 
 .about-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-bottom: 120px;
+  gap: 20px;
+  align-items: center;
 }
 @media (max-width: 1024px) {
   .about-nav {
@@ -1179,7 +1216,7 @@ ul {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     max-width: 100%;
-    margin: 0 auto 80px;
+    margin: 0 auto;
   }
 }
 
@@ -1189,13 +1226,14 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 32px;
+  padding: 16px 38px;
   background: #F8F8F8;
   border-radius: 52px;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 6px 6px 16px rgba(220, 220, 220, 0.8), -6px -6px 16px rgba(255, 255, 255, 0.9);
   white-space: nowrap;
+  min-width: 188px;
 }
 .about-nav__button:hover {
   transform: translateY(-2px);
@@ -1214,6 +1252,7 @@ ul {
     width: auto;
     justify-content: center;
     font-size: 16px;
+    min-width: 148px;
   }
   .about-nav__button:nth-child(3) {
     grid-column: 1;
@@ -1234,7 +1273,7 @@ ul {
 }
 @media (max-width: 768px) {
   .about-nav__button-text {
-    font-size: 17px;
+    font-size: 14px;
   }
 }
 
@@ -1243,11 +1282,14 @@ ul {
   height: 16px;
   color: #00202F;
   transition: transform 0.3s ease;
+  position: relative;
+  right: -10px;
 }
 
 .mission-section {
   padding: 120px 0;
   background: #F8F8F8;
+  padding-bottom: 160px;
 }
 @media (max-width: 768px) {
   .mission-section {
@@ -1276,7 +1318,7 @@ ul {
 .mission-section__left {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   .mission-section__left {
@@ -1300,17 +1342,19 @@ ul {
 }
 @media (max-width: 768px) {
   .mission-section__title {
-    font-size: 48px;
+    font-size: 60px;
+    font-weight: 800;
   }
 }
 
 .mission-section__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
+  margin-bottom: 40px;
 }
 @media (max-width: 768px) {
   .mission-section__subtitle {
@@ -1325,7 +1369,7 @@ ul {
 }
 .mission-section__description p {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.07em;
@@ -1364,6 +1408,7 @@ ul {
 .company-section {
   padding: 120px 0;
   background: #FFFFFF;
+  padding-top: 160px;
 }
 @media (max-width: 768px) {
   .company-section {
@@ -1395,16 +1440,11 @@ ul {
   flex-direction: column;
   gap: 8px;
 }
-@media (max-width: 768px) {
-  .company-section__header {
-    margin-bottom: 24px;
-  }
-}
 
 .company-section__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 68px;
-  font-weight: 700;
+  font-size: 60px;
+  font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -1417,17 +1457,19 @@ ul {
 }
 @media (max-width: 768px) {
   .company-section__title {
-    font-size: 48px;
+    font-size: 60px;
+    font-weight: 800;
   }
 }
 
 .company-section__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
+  margin-top: 20px;
 }
 @media (max-width: 768px) {
   .company-section__subtitle {
@@ -1445,7 +1487,7 @@ ul {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 40px;
-  padding: 32px 0;
+  padding: 28px 0;
   border-top: 1px solid rgba(0, 32, 47, 0.1);
 }
 .company-section__row:last-child {
@@ -1460,15 +1502,15 @@ ul {
 @media (max-width: 768px) {
   .company-section__row {
     grid-template-columns: 1fr;
-    gap: 12px;
-    padding: 24px 0;
+    gap: 8px;
+    padding: 20px 0;
   }
 }
 
 .company-section__label {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
 }
@@ -1495,10 +1537,12 @@ ul {
 .access-section {
   padding: 120px 0;
   background: #FFFFFF;
+  padding-bottom: 240px;
 }
 @media (max-width: 768px) {
   .access-section {
-    padding: 80px 0;
+    padding: 40px 0;
+    padding-bottom: 80px;
   }
 }
 
@@ -1523,7 +1567,7 @@ ul {
 .access-section__left {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   .access-section__left {
@@ -1533,8 +1577,8 @@ ul {
 
 .access-section__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 68px;
-  font-weight: 700;
+  font-size: 60px;
+  font-weight: 800;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -1547,28 +1591,31 @@ ul {
 }
 @media (max-width: 768px) {
   .access-section__title {
-    font-size: 48px;
+    font-size: 60px;
+    font-weight: 800;
   }
 }
 
 .access-section__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
+  margin-top: 20px;
 }
 @media (max-width: 768px) {
   .access-section__subtitle {
     font-size: 15px;
+    margin: 0;
   }
 }
 
 .access-section__info {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
   margin-top: 16px;
 }
 
@@ -1593,14 +1640,15 @@ ul {
 }
 
 .access-section__divider {
-  width: 100%;
+  width: 65%;
   max-width: 600px;
   height: 1px;
-  background: rgba(0, 32, 47, 0.15);
+  background: rgb(0, 32, 47);
 }
 @media (max-width: 768px) {
   .access-section__divider {
     max-width: 100%;
+    width: 100%;
   }
 }
 
@@ -1650,13 +1698,121 @@ ul {
   }
 }
 
+.services-hero__navigation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .services-hero__navigation-wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.services-hero__scroll {
+  position: relative;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .services-hero__scroll {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.services-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .services-nav {
+    gap: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .services-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.services-nav__button {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 38px;
+  background: #F8F8F8;
+  border-radius: 52px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 6px 6px 16px rgba(220, 220, 220, 0.8), -6px -6px 16px rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
+  min-width: 188px;
+}
+.services-nav__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 8px 8px 20px rgba(220, 220, 220, 0.9), -8px -8px 20px rgb(255, 255, 255);
+}
+.services-nav__button:hover .services-nav__button-icon {
+  transform: translateY(2px);
+}
+.services-nav__button:active {
+  transform: translateY(0px);
+  box-shadow: inset 4px 4px 10px rgba(220, 220, 220, 0.7), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+}
+@media (max-width: 768px) {
+  .services-nav__button {
+    padding: 16px 24px;
+    width: auto;
+    justify-content: center;
+    font-size: 16px;
+  }
+}
+
+.services-nav__button-text {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #00202F;
+}
+@media (max-width: 1024px) {
+  .services-nav__button-text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .services-nav__button-text {
+    font-size: 17px;
+  }
+}
+
+.services-nav__button-icon {
+  width: 16px;
+  height: 16px;
+  color: #00202F;
+  transition: transform 0.3s ease;
+}
+
 .debite-section {
-  padding: 120px 0;
+  padding: 240px 0;
   background: #FFFFFF;
 }
 @media (max-width: 768px) {
   .debite-section {
     padding: 80px 0;
+    padding-top: 120px;
   }
 }
 
@@ -1674,7 +1830,7 @@ ul {
 @media (max-width: 768px) {
   .debite-section__content {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 60px;
   }
 }
 
@@ -1693,13 +1849,13 @@ ul {
 .debite-section__header {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
 .debite-section__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-family: "Noto Sans JP", "Zen Kaku Gothic Antique", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
@@ -1728,11 +1884,8 @@ ul {
 
 .debite-section__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  color: #00202F;
+  width: 284px;
+  height: auto;
   margin: 0;
 }
 @media (max-width: 1024px) {
@@ -1747,9 +1900,9 @@ ul {
 }
 
 .debite-section__tagline {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 24px;
-  font-weight: 600;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -1762,18 +1915,28 @@ ul {
 }
 @media (max-width: 768px) {
   .debite-section__tagline {
-    font-size: 18px;
+    font-size: 24px;
+    padding-top: 20px;
+  }
+}
+
+.debite-section__tagline-br {
+  display: none;
+}
+@media (max-width: 768px) {
+  .debite-section__tagline-br {
+    display: block;
   }
 }
 
 .debite-section__description {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 12px;
 }
 .debite-section__description p {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 1.8;
   letter-spacing: 0.07em;
@@ -1789,7 +1952,7 @@ ul {
 .debite-section__right {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 @media (max-width: 768px) {
@@ -1801,11 +1964,14 @@ ul {
   width: 100%;
   height: auto;
   object-fit: contain;
+  max-width: 448px;
 }
 
 .points-section {
   padding: 120px 0;
+  padding-bottom: 160px;
   background: #FFFFFF;
+  padding-top: 0;
 }
 @media (max-width: 768px) {
   .points-section {
@@ -1817,7 +1983,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 }
 @media (max-width: 768px) {
   .points-section__header {
@@ -1827,8 +1993,8 @@ ul {
 
 .points-section__label {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
@@ -1847,7 +2013,6 @@ ul {
 }
 @media (max-width: 768px) {
   .points-section__label {
-    font-size: 13px;
     padding-left: 32px;
   }
   .points-section__label::before {
@@ -1857,22 +2022,12 @@ ul {
 
 .points-section__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 56px;
-  font-weight: 700;
+  font-size: 60px;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
-}
-@media (max-width: 1024px) {
-  .points-section__title {
-    font-size: 48px;
-  }
-}
-@media (max-width: 768px) {
-  .points-section__title {
-    font-size: 40px;
-  }
 }
 
 .points-section__cards {
@@ -1895,42 +2050,35 @@ ul {
 .point-card {
   background: #FFFFFF;
   padding: 40px;
+  padding-inline: 20px;
+  padding-right: 30px;
   border: 2px solid #00202F;
-  border-radius: 8px;
   border-bottom-width: 4px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   position: relative;
-}
-.point-card::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 12px;
-  background: #00202F;
-  border-radius: 0 5px 5px 0;
+  align-items: center;
+  box-shadow: 8px 8px 0px #00202F;
 }
 @media (max-width: 768px) {
   .point-card {
     padding: 32px;
     gap: 12px;
+    box-shadow: 8px 8px 0px #00202F;
   }
 }
 
 .point-card__badge {
   background: #00202F;
   color: #FFFFFF;
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 12px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
-  padding: 6px 16px;
+  padding: 0 16px;
   border-radius: 16px;
   display: inline-block;
-  align-self: flex-start;
 }
 @media (max-width: 768px) {
   .point-card__badge {
@@ -1939,7 +2087,7 @@ ul {
 }
 
 .point-card__title {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -1958,13 +2106,14 @@ ul {
 }
 
 .point-card__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
+  text-align: center;
 }
 @media (max-width: 768px) {
   .point-card__subtitle {
@@ -3052,7 +3201,8 @@ ul {
 
 .plan-section {
   padding: 120px 0;
-  background: #FFFFFF;
+  background: #F8F8F8;
+  padding-top: 60px;
 }
 @media (max-width: 768px) {
   .plan-section {
@@ -3063,8 +3213,8 @@ ul {
 .plan-section__header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 60px;
+  gap: 20px;
+  margin-bottom: 40px;
 }
 @media (max-width: 768px) {
   .plan-section__header {
@@ -3073,8 +3223,8 @@ ul {
 }
 
 .plan-section__label {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 14px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -3104,7 +3254,7 @@ ul {
 
 .plan-section__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 56px;
+  font-size: 60px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: 0.05em;
@@ -3118,7 +3268,22 @@ ul {
 }
 @media (max-width: 768px) {
   .plan-section__title {
-    font-size: 40px;
+    font-size: 60px;
+    font-weight: 900;
+  }
+}
+
+.plan-pricing__container {
+  background: #F8F8F8;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 60px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .plan-pricing__container {
+    padding-inline: 16px;
   }
 }
 
@@ -3126,16 +3291,11 @@ ul {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: stretch;
-  background: #FFFFFF;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
-  padding: 60px;
-  margin-bottom: 24px;
 }
 @media (max-width: 768px) {
   .plan-pricing {
     grid-template-columns: 1fr;
-    padding: 32px;
+    padding: 0;
     gap: 24px;
   }
 }
@@ -3151,23 +3311,26 @@ ul {
 .plan-pricing__badge {
   background: #00202F;
   color: #FFFFFF;
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.03em;
-  padding: 8px 24px;
+  padding: 2px 10px;
   border-radius: 0;
-  display: inline-block;
+  display: flex;
+  min-width: 240px;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   .plan-pricing__badge {
     font-size: 13px;
-    padding: 8px 16px;
+    width: 100%;
+    padding: 6px 16px;
   }
 }
 
 .plan-pricing__amount {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "DIN 2014 Narrow", sans-serif;
   font-size: 80px;
   font-weight: 700;
   line-height: 1;
@@ -3186,9 +3349,10 @@ ul {
 }
 
 .plan-pricing__currency {
-  font-size: 28px;
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 900;
   margin-left: 4px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
 }
 @media (max-width: 768px) {
   .plan-pricing__currency {
@@ -3214,13 +3378,12 @@ ul {
   line-height: 1.7;
   letter-spacing: 0.07em;
   color: #00202F;
-  margin: 0 0 60px;
+  margin-top: 52px;
   text-align: center;
 }
 @media (max-width: 768px) {
   .plan-pricing__note {
     font-size: 13px;
-    margin-bottom: 48px;
     text-align: left;
   }
 }
@@ -3232,12 +3395,12 @@ ul {
   background: #FFFFFF;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   border-radius: 12px;
-  padding: 60px;
+  padding: 40px;
 }
 @media (max-width: 768px) {
   .plan-deposit {
     grid-template-columns: 1fr;
-    padding: 32px;
+    padding: 40px 20px;
     gap: 24px;
   }
 }
@@ -3247,17 +3410,17 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .plan-deposit__badge {
   background: #00202F;
   color: #FFFFFF;
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.03em;
-  padding: 8px 16px;
+  padding: 2px 18px;
   border-radius: 0;
   display: inline-block;
   text-align: center;
@@ -3269,8 +3432,8 @@ ul {
 }
 
 .plan-deposit__amount {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 64px;
+  font-family: "DIN 2014 Narrow", sans-serif;
+  font-size: 80px;
   font-weight: 700;
   line-height: 1;
   color: #00202F;
@@ -3278,23 +3441,24 @@ ul {
 }
 @media (max-width: 1024px) {
   .plan-deposit__amount {
-    font-size: 56px;
+    font-size: 64px;
   }
 }
 @media (max-width: 768px) {
   .plan-deposit__amount {
-    font-size: 48px;
+    font-size: 56px;
   }
 }
 
 .plan-deposit__unit {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 900;
   margin-left: 4px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
 }
 @media (max-width: 768px) {
   .plan-deposit__unit {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 
@@ -3317,9 +3481,9 @@ ul {
 }
 
 .plan-deposit__title {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.6;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -3333,8 +3497,8 @@ ul {
 
 .plan-deposit__example {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 12px;
+  font-weight: 800;
   line-height: 1.7;
   letter-spacing: 0.07em;
   color: #00202F;

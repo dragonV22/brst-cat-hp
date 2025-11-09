@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -59,42 +59,45 @@
                 </div>
             </div>
             
-            <!-- About Navigation Buttons -->
-            <div class="about-nav">
-                <a href="#mission" class="about-nav__button">
-                    <span class="about-nav__button-text">ミッション</span>
-                    <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a href="#company" class="about-nav__button">
-                    <span class="about-nav__button-text">会社情報</span>
-                    <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a href="#access" class="about-nav__button">
-                    <span class="about-nav__button-text">アクセス</span>
-                    <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="about-hero__scroll">
-                <div class="scroll_circle_container">
-                    <svg class="scroll_text_circle" viewBox="0 0 500 500">
-                        <defs>
-                            <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
-                        </defs>
-                        <text>
-                            <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
-                        </text>
-                    </svg>
-                    <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+            <!-- Navigation Wrapper (buttons and scroll in one line on PC) -->
+            <div class="about-hero__navigation-wrapper">
+                <!-- About Navigation Buttons -->
+                <div class="about-nav">
+                    <a href="#mission" class="about-nav__button">
+                        <span class="about-nav__button-text">ミッション</span>
+                        <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#company" class="about-nav__button">
+                        <span class="about-nav__button-text">会社情報</span>
+                        <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#access" class="about-nav__button">
+                        <span class="about-nav__button-text">アクセス</span>
+                        <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="about-hero__scroll">
+                    <div class="scroll_circle_container">
+                        <svg class="scroll_text_circle" viewBox="0 0 500 500">
+                            <defs>
+                                <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+                            </defs>
+                            <text>
+                                <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
+                            </text>
+                        </svg>
+                        <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -199,9 +202,23 @@
                         <p class="card__subtitle">採用情報</p>
                         <div class="card__button">
                             <a href="recruit.html" class="btn-circle">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 20.67 12.66">
+                                    <defs>
+                                      <style>
+                                        .cls-1 {
+                                          fill: none;
+                                          stroke: #fff;
+                                          stroke-miterlimit: 10;
+                                        }
+                                      </style>
+                                    </defs>
+                                    <g id="_デザイン" data-name="デザイン">
+                                      <g>
+                                        <line class="cls-1" y1="6.33" x2="20" y2="6.33"/>
+                                        <polyline class="cls-1" points="14.68 12.33 20 6.33 14.68 .33"/>
+                                      </g>
+                                    </g>
+                                  </svg>
                             </a>
                         </div>
                     </div>
@@ -212,9 +229,23 @@
                         <p class="card__subtitle">お問い合わせ</p>
                         <div class="card__button">
                             <a href="contact.html" class="btn-circle">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 20.67 12.66">
+                                    <defs>
+                                      <style>
+                                        .cls-1 {
+                                          fill: none;
+                                          stroke: #fff;
+                                          stroke-miterlimit: 10;
+                                        }
+                                      </style>
+                                    </defs>
+                                    <g id="_デザイン" data-name="デザイン">
+                                      <g>
+                                        <line class="cls-1" y1="6.33" x2="20" y2="6.33"/>
+                                        <polyline class="cls-1" points="14.68 12.33 20 6.33 14.68 .33"/>
+                                      </g>
+                                    </g>
+                                  </svg>
                             </a>
                         </div>
                     </div>

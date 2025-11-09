@@ -10,6 +10,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Font -->
+    <style>
+        @font-face {
+            font-family: 'DIN 2014 Narrow';
+            src: url('../assets/fonts/DIN-2014_Narrow-Bold.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -47,48 +58,51 @@
     </header>
     
     <!-- Services Hero Section -->
-    <section class="about-hero">
+    <section class="about-hero services-hero">
         <div class="container">
             <div class="about-hero__content">
                 <div class="about-hero__text">
                     <h1 class="about-hero__title">Services</h1>
                     <p class="about-hero__subtitle">事業内容</p>
                 </div>
-                <div class="about-hero__image">
+                <div class="about-hero__image services-hero__image">
                     <img src="../assets/top-service.png" alt="Services illustration">
                 </div>
             </div>
             
-            <!-- Service Navigation Buttons -->
-            <div class="about-nav">
-                <a href="#debite" class="about-nav__button">
-                    <span class="about-nav__button-text">deバイト</span>
-                    <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <!-- <a href="#dummy" class="about-nav__button">
-                    <span class="about-nav__button-text">ダミー</span>
-                    <svg class="about-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a> -->
-            </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="about-hero__scroll">
-                <div class="scroll_circle_container">
-                    <svg class="scroll_text_circle" viewBox="0 0 500 500">
-                        <defs>
-                            <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
-                        </defs>
-                        <text>
-                            <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
-                        </text>
-                    </svg>
-                    <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+            <!-- Navigation Wrapper (buttons and scroll in one line on PC) -->
+            <div class="services-hero__navigation-wrapper">
+                <!-- Service Navigation Buttons -->
+                <div class="services-nav">
+                    <a href="#debite" class="services-nav__button">
+                        <span class="services-nav__button-text">deバイト</span>
+                        <svg class="services-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <!-- <a href="#dummy" class="services-nav__button">
+                        <span class="services-nav__button-text">ダミー</span>
+                        <svg class="services-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a> -->
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="services-hero__scroll">
+                    <div class="scroll_circle_container">
+                        <svg class="scroll_text_circle" viewBox="0 0 500 500">
+                            <defs>
+                                <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+                            </defs>
+                            <text>
+                                <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
+                            </text>
+                        </svg>
+                        <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -104,8 +118,22 @@
                             コンカフェのバイト探しは
                             <img src="../public/search.svg" alt="search" class="debite-section__search-icon">
                         </p>
-                        <h2 class="debite-section__title">デバイト</h2>
-                        <p class="debite-section__tagline">個性を活かす、<br>最高のスタッフを。</p>
+                        <h2 class="debite-section__title">
+                            <svg id="_レイヤー_1" data-name="レイヤー_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 280 63">
+                                <defs>
+                                    <style>
+                                        .st0 {
+                                            fill: #00202f;
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="st0" d="M60,26.5c1.1,0,1.5.5,1.4,1.6l-1.8,10c-.2,1.1-.8,1.7-1.9,1.7h-16.6c-1.1,0-1.7.5-1.9,1.6l-3.6,20c-.1,1.1-.8,1.6-1.9,1.6H10.5c-1.1,0-1.6-.5-1.4-1.6l1.8-10c.2-1.1.9-1.7,2-1.7h8.2c1.1,0,1.8-.5,2-1.6l1.2-6.7c.2-1.1-.3-1.6-1.4-1.6H1.3c-1.1,0-1.6-.6-1.4-1.7l1.8-10c.2-1.1.8-1.6,2-1.6h56.4ZM60.3,13.6c1.1,0,1.5.5,1.3,1.6l-.5,3.1c-.2,1.1-.9,1.6-2,1.6H6.1c-1.1,0-1.6-.5-1.4-1.6l1.8-10c.2-1.1.8-1.7,1.9-1.7h38.9c1.1,0,1.6.6,1.4,1.7l-.7,4.3c-.1.7.1,1,.8,1h11.5ZM51.7,11.7c-.7,0-.9-.3-.8-1l1.7-9.6c0-.7.5-1,1.2-1h3.8c.7,0,.9.3.8,1l-1.7,9.6c0,.7-.5,1-1.2,1h-3.8ZM66,0c.7,0,.9.3.8,1l-1.7,9.6c0,.7-.5,1-1.2,1h-3.8c-.7,0-1-.3-.9-1l1.8-9.6c0-.7.5-1,1.2-1h3.8Z"/>
+                                <path class="st0" d="M101.2,6.7c1.1,0,1.6.5,1.4,1.6l-9.3,53.1c-.2,1.1-.9,1.6-2,1.6h-18.7c-1.1,0-1.6-.5-1.4-1.6l1.8-10c.2-1.1.8-1.7,1.9-1.7h3.6c1.1,0,1.8-.5,2-1.6l7-39.8c.2-1.1.9-1.6,2-1.6h11.7ZM132.5,49.7c1.1,0,1.5.6,1.4,1.7l-1.8,10c-.2,1.1-.8,1.6-1.9,1.6h-19.3c-1.1,0-1.6-.6-1.5-1.7l5.5-53c0-1.1.7-1.7,1.8-1.7h3.7c1.1,0,1.6.6,1.4,1.7l-.8,4.3c0,.7.2,1,.8,1h5.5c1.1,0,1.6.5,1.5,1.6l-3.4,32.9c-.1,1.1.3,1.6,1.5,1.6h5.7ZM124.5,11.7c-.6,0-.9-.3-.8-1l1.7-9.6c.1-.7.5-1,1.2-1h3.9c.6,0,.9.3.8,1l-1.7,9.6c-.1.7-.5,1-1.2,1h-3.9ZM138.9,0c.6,0,.9.3.8,1l-1.8,9.6c0,.7-.5,1-1.2,1h-3.8c-.6,0-.9-.3-.8-1l1.7-9.6c.1-.7.5-1,1.2-1h3.9Z"/>
+                                <path class="st0" d="M196.1,6.6h13c1.1,0,1.6.6,1.4,1.7l-1.8,10c-.2,1.1-.9,1.6-2,1.6h-3.9c-1.1,0-2.1.4-2.9,1.1l-12.5,11.1c-.8.7-1.8,1.1-2.8,1.1h-36.6c-1.1,0-1.5-.5-1.3-1.6l1.8-10c.2-1.1.8-1.7,1.9-1.7h27.4c1.1,0,2.1-.4,2.9-1.1l12.5-11.1c.8-.7,1.8-1.1,2.9-1.1ZM171.4,39.8h12.5c1.1,0,1.6.5,1.4,1.6l-3.5,20c-.2,1.1-.9,1.6-2,1.6h-12.5c-1.1,0-1.6-.5-1.4-1.6l3.5-20c.2-1.1.9-1.6,2-1.6Z"/>
+                                <path class="st0" d="M233.8,26.5h44.8c1.1,0,1.5.5,1.3,1.6l-1.7,10.1c-.2,1.1-.8,1.6-1.9,1.6h-29.2c-1.1,0-1.8.5-2,1.6l-3.5,20c-.2,1.1-.9,1.6-2,1.6h-12.3c-1.1,0-1.6-.5-1.4-1.6l5.8-33.2c.2-1.1.9-1.6,2-1.6ZM251.5,5l-2.3,13.3c-.2,1.1-.9,1.6-2,1.6h-12.3c-1.1,0-1.6-.5-1.4-1.6l2.3-13.3c.2-1.1.9-1.6,2-1.6h12.3c1.1,0,1.6.5,1.4,1.6Z"/>
+                            </svg>
+                        </h2>
+                        <p class="debite-section__tagline">個性を活かす、<br class="debite-section__tagline-br"/>最高のスタッフを。</p>
                     </div>
                     <div class="debite-section__description">
                         <p>「deバイト」は、コンセプトカフェ専門の求人サイトです。</p>
@@ -166,21 +194,27 @@
             </div>
             
             <!-- Pricing Cards -->
-            <div class="plan-pricing">
-                <div class="plan-pricing__card">
-                    <div class="plan-pricing__badge">初期費用・月額利用料・掲載費用</div>
-                    <p class="plan-pricing__amount">0<span class="plan-pricing__currency">円</span></p>
+             <div class="plan-pricing__container">
+                <div class="plan-pricing">
+                    <div class="plan-pricing__card">
+                        <div class="plan-pricing__badge">初期費用・月額利用料・掲載費用</div>
+                        <p class="plan-pricing__amount">0<span class="plan-pricing__currency">円</span></p>
+                    </div>
+                    
+                    <div class="plan-pricing__divider"></div>
+                    
+                    <div class="plan-pricing__card">
+                        <div class="plan-pricing__badge">採用料金（成果報酬）</div>
+                        <p class="plan-pricing__amount">75,000<span class="plan-pricing__currency">円</span></p>
+                    </div>
                 </div>
-                
-                <div class="plan-pricing__divider"></div>
-                
-                <div class="plan-pricing__card">
-                    <div class="plan-pricing__badge">採用料金（成果報酬）</div>
-                    <p class="plan-pricing__amount">75,000<span class="plan-pricing__currency">円</span></p>
-                </div>
-            </div>
+                <p class="plan-pricing__note">申し込みがあるのにも関わらず、3ヶ月間採用がない場合は、利用料金として75,000円(税別)をお支払いいただけます。</p>
+             </div>
+           
+
             
-            <p class="plan-pricing__note">申し込みがあるのにも関わらず、3ヶ月間採用がない場合は、利用料金として75,000円(税別)をお支払いいただけます。</p>
+            
+
             
             <!-- Deposit Info -->
             <div class="plan-deposit">
@@ -193,7 +227,7 @@
                 
                 <div class="plan-deposit__right">
                     <h3 class="plan-deposit__title">デポジット金額に応じてご利用できる店舗数が変動します</h3>
-                    <p class="plan-deposit__example">利用例：5店舗利用をご希望の際は、<br>200,000円×5店舗＝1,000,000円ご入金</p>
+                    <p class="plan-deposit__example">利用例：5店舗利用をご希望の際は、200,000円×5店舗＝1,000,000円ご入金</p>
                     <p class="plan-deposit__description">※ デポジットとは「一時的な預かり金」や「保証金」を指す言葉で、採用料金の未払いを防ぐ目的で導入させていただいております。</p>
                     <p class="plan-deposit__description">※ デポジットの入金方法は、クレジットカードと銀行振り込みの2種類です。</p>
                 </div>
@@ -213,9 +247,23 @@
                         <p class="card__subtitle">採用情報</p>
                         <div class="card__button">
                             <a href="recruit.html" class="btn-circle">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 20.67 12.66">
+                                    <defs>
+                                      <style>
+                                        .cls-1 {
+                                          fill: none;
+                                          stroke: #fff;
+                                          stroke-miterlimit: 10;
+                                        }
+                                      </style>
+                                    </defs>
+                                    <g id="_デザイン" data-name="デザイン">
+                                      <g>
+                                        <line class="cls-1" y1="6.33" x2="20" y2="6.33"/>
+                                        <polyline class="cls-1" points="14.68 12.33 20 6.33 14.68 .33"/>
+                                      </g>
+                                    </g>
+                                  </svg>
                             </a>
                         </div>
                     </div>
@@ -226,9 +274,23 @@
                         <p class="card__subtitle">お問い合わせ</p>
                         <div class="card__button">
                             <a href="contact.html" class="btn-circle">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" viewBox="0 0 20.67 12.66">
+                                    <defs>
+                                      <style>
+                                        .cls-1 {
+                                          fill: none;
+                                          stroke: #fff;
+                                          stroke-miterlimit: 10;
+                                        }
+                                      </style>
+                                    </defs>
+                                    <g id="_デザイン" data-name="デザイン">
+                                      <g>
+                                        <line class="cls-1" y1="6.33" x2="20" y2="6.33"/>
+                                        <polyline class="cls-1" points="14.68 12.33 20 6.33 14.68 .33"/>
+                                      </g>
+                                    </g>
+                                  </svg>
                             </a>
                         </div>
                     </div>

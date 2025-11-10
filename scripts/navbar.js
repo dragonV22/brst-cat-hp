@@ -72,5 +72,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Contact form validation
+    const contactForm = document.querySelector('.contact-form');
+    const submitButton = document.getElementById('submitButton');
+    
+    if (contactForm && submitButton) {
+        // Get all required fields
+        const requiredFields = contactForm.querySelectorAll('[required]');
+        
+        // Function to validate all required fields
+        function validateForm() {
+            let allValid = true;
+            
+            requiredFields.forEach(field => {
+                if (field.type === 'checkbox') {
+                    if (!field.checked) {
+                        allValid = false;
+                    }
+                } else if (field.tagName === 'SELECT') {
+                    if (!field.value || field.value === '') {
+                        allValid = false;
+                    }
+                } else {
+                    if (!field.value || field.value.trim() === '') {
+                        allValid = false;
+                    }
+                }
+            });
+            
+            // Enable or disable submit button based on validation
+            submitButton.disabled = !allValid;
+        }
+        
+        // Add event listeners to all required fields
+        requiredFields.forEach(field => {
+            field.addEventListener('input', validateForm);
+            field.addEventListener('change', validateForm);
+        });
+        
+        // Initial validation on page load
+        validateForm();
+    }
 });
 

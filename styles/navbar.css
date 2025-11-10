@@ -125,6 +125,15 @@ ul {
   padding: 0;
   padding-inline: 40px;
 }
+@media (min-width: 769px) {
+  .navbar__list:hover .navbar__item {
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+  .navbar__list:hover .navbar__item:hover {
+    opacity: 1;
+  }
+}
 @media (max-width: 768px) {
   .navbar__list {
     flex-direction: column;
@@ -653,22 +662,34 @@ ul {
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
 }
-.btn-neumorphic:hover {
+.btn-neumorphic:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 10px 10px 24px rgba(220, 220, 220, 0.9), -10px -10px 24px rgb(255, 255, 255);
 }
-.btn-neumorphic:hover::before {
+.btn-neumorphic:hover:not(:disabled)::before {
   width: 500px;
   height: 500px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.btn-neumorphic:hover span {
+.btn-neumorphic:hover:not(:disabled) span {
   color: #ffffff;
 }
-.btn-neumorphic:active {
+.btn-neumorphic:active:not(:disabled) {
   transform: translateY(0px);
   box-shadow: inset 6px 6px 12px rgba(220, 220, 220, 0.7), inset -6px -6px 12px rgba(255, 255, 255, 0.7);
+}
+.btn-neumorphic:disabled {
+  background: #808080;
+  cursor: not-allowed;
+  opacity: 1;
+  box-shadow: none;
+}
+.btn-neumorphic:disabled::before {
+  background: #808080;
+}
+.btn-neumorphic:disabled svg {
+  opacity: 1;
 }
 @media (max-width: 768px) {
   .btn-neumorphic {
@@ -1235,21 +1256,44 @@ ul {
   background: #F8F8F8;
   border-radius: 52px;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 6px 6px 16px rgba(220, 220, 220, 0.8), -6px -6px 16px rgba(255, 255, 255, 0.9);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 8px 8px 16px rgba(0, 32, 47, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.8), inset 0 0 0 rgba(0, 32, 47, 0);
   white-space: nowrap;
   min-width: 188px;
+  position: relative;
+  overflow: hidden;
+}
+.about-nav__button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(0, 32, 47) 0%, rgba(0, 32, 47, 0.9) 100%);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 0;
 }
 .about-nav__button:hover {
-  transform: translateY(-2px);
-  box-shadow: 8px 8px 20px rgba(220, 220, 220, 0.9), -8px -8px 20px rgb(255, 255, 255);
+  box-shadow: 4px 4px 8px rgba(0, 32, 47, 0.15), -4px -4px 8px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 32, 47, 0.1);
+}
+.about-nav__button:hover::before {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
+}
+.about-nav__button:hover .about-nav__button-text {
+  color: #FFFFFF;
+  z-index: 1;
 }
 .about-nav__button:hover .about-nav__button-icon {
-  transform: translateY(2px);
+  z-index: 1;
 }
-.about-nav__button:active {
-  transform: translateY(0px);
-  box-shadow: inset 4px 4px 10px rgba(220, 220, 220, 0.7), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+.about-nav__button:hover .about-nav__button-icon path {
+  stroke: #FFFFFF;
 }
 @media (max-width: 768px) {
   .about-nav__button {
@@ -1270,6 +1314,9 @@ ul {
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #00202F;
+  position: relative;
+  z-index: 1;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media (max-width: 1024px) {
   .about-nav__button-text {
@@ -1284,11 +1331,13 @@ ul {
 
 .about-nav__button-icon {
   width: 16px;
-  height: 16px;
-  color: #00202F;
-  transition: transform 0.3s ease;
+  height: 18px;
   position: relative;
-  right: -10px;
+  z-index: 1;
+}
+.about-nav__button-icon path {
+  stroke: #00202F;
+  transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mission-section {
@@ -1760,21 +1809,44 @@ ul {
   background: #F8F8F8;
   border-radius: 52px;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 6px 6px 16px rgba(220, 220, 220, 0.8), -6px -6px 16px rgba(255, 255, 255, 0.9);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 8px 8px 16px rgba(0, 32, 47, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.8), inset 0 0 0 rgba(0, 32, 47, 0);
   white-space: nowrap;
   min-width: 188px;
+  position: relative;
+  overflow: hidden;
+}
+.services-nav__button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(0, 32, 47) 0%, rgba(0, 32, 47, 0.9) 100%);
+  transform: translate(-50%, -50%);
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: 0;
 }
 .services-nav__button:hover {
-  transform: translateY(-2px);
-  box-shadow: 8px 8px 20px rgba(220, 220, 220, 0.9), -8px -8px 20px rgb(255, 255, 255);
+  box-shadow: 4px 4px 8px rgba(0, 32, 47, 0.15), -4px -4px 8px rgba(255, 255, 255, 0.9), inset 2px 2px 4px rgba(0, 32, 47, 0.1);
+}
+.services-nav__button:hover::before {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
+}
+.services-nav__button:hover .services-nav__button-text {
+  color: #FFFFFF;
+  z-index: 1;
 }
 .services-nav__button:hover .services-nav__button-icon {
-  transform: translateY(2px);
+  z-index: 1;
 }
-.services-nav__button:active {
-  transform: translateY(0px);
-  box-shadow: inset 4px 4px 10px rgba(220, 220, 220, 0.7), inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+.services-nav__button:hover .services-nav__button-icon path {
+  stroke: #FFFFFF;
 }
 @media (max-width: 768px) {
   .services-nav__button {
@@ -1791,6 +1863,9 @@ ul {
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #00202F;
+  position: relative;
+  z-index: 1;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media (max-width: 1024px) {
   .services-nav__button-text {
@@ -1805,9 +1880,13 @@ ul {
 
 .services-nav__button-icon {
   width: 16px;
-  height: 16px;
-  color: #00202F;
-  transition: transform 0.3s ease;
+  height: 18px;
+  position: relative;
+  z-index: 1;
+}
+.services-nav__button-icon path {
+  stroke: #00202F;
+  transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .debite-section {
@@ -2348,8 +2427,10 @@ ul {
   z-index: 1;
 }
 .recruit-nav__button:hover .recruit-nav__button-icon {
-  stroke: #FFFFFF;
   z-index: 1;
+}
+.recruit-nav__button:hover .recruit-nav__button-icon path {
+  stroke: #FFFFFF;
 }
 @media (max-width: 1024px) {
   .recruit-nav__button {
@@ -2374,16 +2455,18 @@ ul {
 
 .recruit-nav__button-icon {
   width: 16px;
-  height: 16px;
-  stroke: #00202F;
+  height: 18px;
   position: relative;
   z-index: 1;
+}
+.recruit-nav__button-icon path {
+  stroke: #00202F;
   transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media (max-width: 768px) {
   .recruit-nav__button-icon {
     width: 14px;
-    height: 14px;
+    height: 16px;
   }
 }
 
@@ -2415,18 +2498,15 @@ ul {
   0% {
     width: 0%;
   }
-  50% {
-    width: 100%;
-  }
   100% {
-    width: 0%;
+    width: 100%;
   }
 }
 .message-section__line {
   max-width: 44px;
   height: 1px;
   background: #00202F;
-  animation: lineGrowLoop 8s ease-in-out infinite;
+  animation: lineGrowLoop 4s infinite alternate;
 }
 @media (max-width: 768px) {
   .message-section__line {
@@ -2617,6 +2697,7 @@ ul {
 }
 @media (max-width: 768px) {
   .message-section__image--right {
+    height: 300px;
     display: flex;
     justify-content: end;
   }
@@ -2649,7 +2730,7 @@ ul {
   max-width: 44px;
   height: 1px;
   background: #00202F;
-  animation: lineGrowLoop 8s ease-in-out infinite;
+  animation: lineGrowLoop 4s infinite alternate;
 }
 @media (max-width: 768px) {
   .job-list-section__line {

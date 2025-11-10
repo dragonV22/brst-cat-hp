@@ -239,6 +239,19 @@ ul {
     padding: 0;
     padding-inline: 40px;
     
+    // When hovering over the list on desktop, make all items semi-transparent
+    @media (min-width: 769px) {
+        &:hover .navbar__item {
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        
+        // Restore full opacity for the hovered item
+        &:hover .navbar__item:hover {
+            opacity: 1;
+        }
+    }
+    
     @media (max-width: 768px) {
         flex-direction: column;
         gap: $spacing-unit * 8; // 32px
@@ -798,7 +811,7 @@ ul {
         z-index: 1;
     }
     
-    &:hover {
+    &:hover:not(:disabled) {
         transform: translateY(-2px);
         box-shadow: 
             10px 10px 24px rgba(220, 220, 220, 0.9),
@@ -816,11 +829,32 @@ ul {
         }
     }
     
-    &:active {
+    &:active:not(:disabled) {
         transform: translateY(0px);
         box-shadow: 
             inset 6px 6px 12px rgba(220, 220, 220, 0.7),
             inset -6px -6px 12px rgba(255, 255, 255, 0.7);
+    }
+    
+    &:disabled {
+        background: #808080;
+        // color: #FFFFFF;
+        cursor: not-allowed;
+        opacity: 1;
+        box-shadow: none;
+        
+        &::before {
+            background: #808080;
+        }
+        
+        span {
+            // color: #FFFFFF;
+        }
+        
+        svg {
+            // stroke: #FFFFFF;
+            opacity: 1;
+        }
     }
     
     @media (max-width: 768px) {
@@ -1384,29 +1418,55 @@ ul {
     background: $color-bg;
     border-radius: $spacing-unit * 13; // 52px (more pill-shaped)
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        6px 6px 16px rgba(220, 220, 220, 0.8),
-        -6px -6px 16px rgba(255, 255, 255, 0.9);
+        8px 8px 16px rgba(0, 32, 47, 0.1),
+        -8px -8px 16px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 rgba(0, 32, 47, 0);
     white-space: nowrap;
     min-width: 188px;
+    position: relative;
+    overflow: hidden;
     
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 
-            8px 8px 20px rgba(220, 220, 220, 0.9),
-            -8px -8px 20px rgba(255, 255, 255, 1);
-        
-        .about-nav__button-icon {
-            transform: translateY(2px);
-        }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 32, 47, 1) 0%, rgba(0, 32, 47, 0.9) 100%);
+        transform: translate(-50%, -50%);
+        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        z-index: 0;
     }
     
-    &:active {
-        transform: translateY(0px);
+    &:hover {
         box-shadow: 
-            inset 4px 4px 10px rgba(220, 220, 220, 0.7),
-            inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+            4px 4px 8px rgba(0, 32, 47, 0.15),
+            -4px -4px 8px rgba(255, 255, 255, 0.9),
+            inset 2px 2px 4px rgba(0, 32, 47, 0.1);
+        
+        &::before {
+            opacity: 1;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .about-nav__button-text {
+            color: #FFFFFF;
+            z-index: 1;
+        }
+        
+        .about-nav__button-icon {
+            z-index: 1;
+            
+            path {
+                stroke: #FFFFFF;
+            }
+        }
     }
     
     @media (max-width: 768px) {
@@ -1428,6 +1488,9 @@ ul {
     font-weight: 600;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
     @media (max-width: 1024px) {
         font-size: 16px;
@@ -1440,11 +1503,14 @@ ul {
 
 .about-nav__button-icon {
     width: $spacing-unit * 4; // 16px
-    height: $spacing-unit * 4; // 16px
-    color: $color-text;
-    transition: transform 0.3s ease;
+    height: $spacing-unit * 4.5; // 18px (taller for longer arrow)
     position: relative;
-    right: -10px;
+    z-index: 1;
+    
+    path {
+        stroke: $color-text;
+        transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
 // ===============================================
@@ -1908,29 +1974,55 @@ ul {
     background: $color-bg;
     border-radius: $spacing-unit * 13; // 52px (more pill-shaped)
     text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        6px 6px 16px rgba(220, 220, 220, 0.8),
-        -6px -6px 16px rgba(255, 255, 255, 0.9);
+        8px 8px 16px rgba(0, 32, 47, 0.1),
+        -8px -8px 16px rgba(255, 255, 255, 0.8),
+        inset 0 0 0 rgba(0, 32, 47, 0);
     white-space: nowrap;
     min-width: 188px;
+    position: relative;
+    overflow: hidden;
     
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 
-            8px 8px 20px rgba(220, 220, 220, 0.9),
-            -8px -8px 20px rgba(255, 255, 255, 1);
-        
-        .services-nav__button-icon {
-            transform: translateY(2px);
-        }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(0, 32, 47, 1) 0%, rgba(0, 32, 47, 0.9) 100%);
+        transform: translate(-50%, -50%);
+        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        z-index: 0;
     }
     
-    &:active {
-        transform: translateY(0px);
+    &:hover {
         box-shadow: 
-            inset 4px 4px 10px rgba(220, 220, 220, 0.7),
-            inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+            4px 4px 8px rgba(0, 32, 47, 0.15),
+            -4px -4px 8px rgba(255, 255, 255, 0.9),
+            inset 2px 2px 4px rgba(0, 32, 47, 0.1);
+        
+        &::before {
+            opacity: 1;
+            width: 300px;
+            height: 300px;
+        }
+        
+        .services-nav__button-text {
+            color: #FFFFFF;
+            z-index: 1;
+        }
+        
+        .services-nav__button-icon {
+            z-index: 1;
+            
+            path {
+                stroke: #FFFFFF;
+            }
+        }
     }
     
     @media (max-width: 768px) {
@@ -1947,6 +2039,9 @@ ul {
     font-weight: 600;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     
     @media (max-width: 1024px) {
         font-size: 16px;
@@ -1959,9 +2054,14 @@ ul {
 
 .services-nav__button-icon {
     width: $spacing-unit * 4; // 16px
-    height: $spacing-unit * 4; // 16px
-    color: $color-text;
-    transition: transform 0.3s ease;
+    height: $spacing-unit * 4.5; // 18px (taller for longer arrow)
+    position: relative;
+    z-index: 1;
+    
+    path {
+        stroke: $color-text;
+        transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 }
 
 .services-hero__image {
@@ -2542,8 +2642,11 @@ ul {
         }
         
         .recruit-nav__button-icon {
-            stroke: #FFFFFF;
             z-index: 1;
+            
+            path {
+                stroke: #FFFFFF;
+            }
         }
     }
     
@@ -2568,15 +2671,18 @@ ul {
 
 .recruit-nav__button-icon {
     width: 16px;
-    height: 16px;
-    stroke: $color-text;
+    height: 18px; // Taller for longer arrow
     position: relative;
     z-index: 1;
-    transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    path {
+        stroke: $color-text;
+        transition: stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
     
     @media (max-width: 768px) {
         width: 14px;
-        height: 14px;
+        height: 16px; // Taller for longer arrow
     }
 }
 
@@ -2610,19 +2716,16 @@ ul {
     0% {
         width: 0%;
     }
-    50% {
-        width: 100%;
-    }
     100% {
-        width: 0%;
+        width: 100%;
     }
 }
 
 .message-section__line {
     max-width: $spacing-unit * 11; // 44px max width
-    height: 1px;
+    height: 1px;    
     background: $color-text;
-    animation: lineGrowLoop 8s ease-in-out infinite;
+    animation: lineGrowLoop 4s infinite alternate;
     
     @media (max-width: 768px) {
         max-width: $spacing-unit * 8; // 32px max width
@@ -2808,7 +2911,7 @@ ul {
     }
     
     @media (max-width: 768px) {
-        // height: 200px;
+        height: 300px;
         // margin-top: 0;
         display: flex;
         justify-content: end;
@@ -2844,7 +2947,7 @@ ul {
     max-width: $spacing-unit * 11; // 44px max width
     height: 1px;
     background: $color-text;
-    animation: lineGrowLoop 8s ease-in-out infinite;
+    animation: lineGrowLoop 4s infinite alternate;
     
     @media (max-width: 768px) {
         max-width: $spacing-unit * 8; // 32px max width

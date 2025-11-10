@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
-    <header class="header"
-    
-    >
+    <header class="header">
         <div class="container">
-            <nav class="navbar">
-                <a href="../index.html" class="navbar__logo">
-                    <img src="../assets/logo-ne.png" alt="BRST CAT Logo">
-                </a>
+            <div class="navbar">
+                <div class="navbar__logo">
+                    <a href="../index.html">
+                        <img src="../assets/logo-ne.png" alt="BRST CAT Logo">
+                    </a>
+                </div>
                 
-                <div class="navbar__menu">
+                <nav class="navbar__menu">
                     <ul class="navbar__list">
                         <li class="navbar__item">
                             <a href="about.html" class="navbar__link">About us</a>
@@ -29,19 +29,19 @@
                             <a href="services.html" class="navbar__link">Services</a>
                         </li>
                         <li class="navbar__item">
-                            <a href="recruit.html" class="navbar__link navbar__link--active">Recruit</a>
+                            <a href="recruit.html" class="navbar__link">Recruit</a>
                         </li>
                         <li class="navbar__item">
                             <a href="contact.html" class="navbar__link navbar__link--contact">Contact</a>
                         </li>
                     </ul>
-                </div>
-                
-                <button class="navbar__hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
+                </nav>
+
+                <button class="navbar__hamburger" aria-label="Toggle menu" style="padding-left: 8px; padding-right: 8px;">
+                    <span class="navbar__hamburger-line"></span>
+                    <span class="navbar__hamburger-line"></span>
                 </button>
-            </nav>
+            </div>
         </div>
     </header>
 
@@ -58,36 +58,39 @@
                 </div>
             </div>
             
-            <!-- Navigation Buttons -->
-            <div class="recruit-nav">
-                <a href="#message" class="recruit-nav__button">
-                    <span class="recruit-nav__button-text">メッセージ</span>
-                    <svg class="recruit-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-                <a href="#positions" class="recruit-nav__button">
-                    <span class="recruit-nav__button-text">募集職種</span>
-                    <svg class="recruit-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
-            </div>
-            
-            <!-- Scroll Indicator -->
-            <div class="recruit-hero__scroll">
-                <div class="scroll_circle_container">
-                    <svg class="scroll_text_circle" viewBox="0 0 500 500">
-                        <defs>
-                            <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
-                        </defs>
-                        <text>
-                            <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
-                        </text>
-                    </svg>
-                    <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+            <!-- Navigation Wrapper (buttons and scroll in one line on PC) -->
+            <div class="recruit-hero__navigation-wrapper">
+                <!-- Navigation Buttons -->
+                <div class="recruit-nav">
+                    <a href="#message" class="recruit-nav__button">
+                        <span class="recruit-nav__button-text">メッセージ</span>
+                        <svg class="recruit-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#positions" class="recruit-nav__button">
+                        <span class="recruit-nav__button-text">募集職種</span>
+                        <svg class="recruit-nav__button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Scroll Indicator -->
+                <div class="recruit-hero__scroll">
+                    <div class="scroll_circle_container">
+                        <svg class="scroll_text_circle" viewBox="0 0 500 500">
+                            <defs>
+                                <path id="scroll_text_circle" d="M250,400 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"></path>
+                            </defs>
+                            <text>
+                                <textPath xlink:href="#scroll_text_circle">SCROLL DOWN ・ SCROLL DOWN ・ </textPath>
+                            </text>
+                        </svg>
+                        <svg class="scroll_icon_img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </div>
@@ -103,7 +106,7 @@
             
             <div class="message-section__content">
                 <div class="message-section__title-wrapper">
-                    <img src="../public/pc-message.png" alt="Your personality and skills will shape the future of the industry." class="message-section__title-image message-section__title-image--pc">
+                    <img src="../assets/pc-message-service.png" alt="Your personality and skills will shape the future of the industry." class="message-section__title-image message-section__title-image--pc">
                     <img src="../public/sp-message.png" alt="Your personality and skills will shape the future of the industry." class="message-section__title-image message-section__title-image--mobile">
                 </div>
                 

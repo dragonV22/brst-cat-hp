@@ -365,8 +365,8 @@ ul {
 }
 
 .scroll_circle_container {
-  width: 65px;
-  height: 65px;
+  width: 90px;
+  height: 90px;
   position: relative;
   display: flex;
   align-items: center;
@@ -376,8 +376,8 @@ ul {
 }
 @media (max-width: 768px) {
   .scroll_circle_container {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
   }
 }
 .scroll_circle_container:hover .scroll_text_circle {
@@ -2152,20 +2152,19 @@ ul {
   min-height: calc(100vh - 112px);
   display: flex;
   align-items: center;
-  padding: 80px 0 120px;
+  padding: 80px 0 80px;
   position: relative;
 }
 @media (max-width: 768px) {
   .recruit-hero {
     min-height: auto;
-    padding: 60px 0 100px;
+    padding: 40px 0 40px;
   }
 }
 
 .recruit-hero__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
   align-items: center;
   margin-bottom: 80px;
 }
@@ -2177,27 +2176,28 @@ ul {
 @media (max-width: 768px) {
   .recruit-hero__content {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 0;
   }
 }
 
 .recruit-hero__text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   .recruit-hero__text {
     order: 2;
     text-align: center;
+    position: relative;
+    top: -114px;
   }
 }
 
 .recruit-hero__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 92px;
-  font-weight: 700;
+  font-size: 100px;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -2210,14 +2210,15 @@ ul {
 }
 @media (max-width: 768px) {
   .recruit-hero__title {
-    font-size: 68px;
+    font-size: 72px;
+    font-weight: 900;
   }
 }
 
 .recruit-hero__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
@@ -2235,11 +2236,11 @@ ul {
   align-items: center;
   border-radius: 24px;
   overflow: hidden;
+  max-width: 560px;
 }
 @media (max-width: 768px) {
   .recruit-hero__image {
     order: 1;
-    border-radius: 16px;
   }
 }
 .recruit-hero__image img {
@@ -2249,20 +2250,37 @@ ul {
   object-fit: cover;
   display: block;
 }
+@media (max-width: 768px) {
+  .recruit-hero__image img {
+    border-radius: 16px;
+    width: 340px;
+    height: 200px;
+  }
+}
 
 .recruit-hero__scroll {
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
+  position: relative;
+  flex-shrink: 0;
 }
 @media (max-width: 768px) {
   .recruit-hero__scroll {
-    position: relative;
-    bottom: auto;
-    right: auto;
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+  }
+}
+
+.recruit-hero__navigation-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 768px) {
+  .recruit-hero__navigation-wrapper {
+    flex-direction: column;
+    gap: 60px;
+    margin-top: -40px;
+    margin-bottom: 0;
   }
 }
 
@@ -2271,14 +2289,14 @@ ul {
   gap: 24px;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 80px;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .recruit-nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    margin-bottom: 60px;
+    width: 100%;
   }
 }
 
@@ -2291,8 +2309,8 @@ ul {
   border: none;
   border-radius: 100px;
   box-shadow: 8px 8px 16px rgba(0, 32, 47, 0.1), -8px -8px 16px rgba(255, 255, 255, 0.8), inset 0 0 0 rgba(0, 32, 47, 0);
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 17px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -2370,12 +2388,14 @@ ul {
 }
 
 .message-section {
-  padding: 120px 0;
-  background: #F8F8F8;
+  padding: 0;
+  background: #FFFFFF;
+  padding-top: 160px;
 }
 @media (max-width: 768px) {
   .message-section {
     padding: 80px 0;
+    padding-bottom: 0;
   }
 }
 
@@ -2391,21 +2411,33 @@ ul {
   }
 }
 
+@keyframes lineGrowLoop {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
 .message-section__line {
-  width: 44px;
+  max-width: 44px;
   height: 1px;
   background: #00202F;
+  animation: lineGrowLoop 8s ease-in-out infinite;
 }
 @media (max-width: 768px) {
   .message-section__line {
-    width: 32px;
+    max-width: 32px;
   }
 }
 
 .message-section__label {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
@@ -2419,18 +2451,18 @@ ul {
 .message-section__content {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 32px;
 }
 @media (max-width: 768px) {
   .message-section__content {
-    gap: 48px;
+    gap: 28px;
   }
 }
 
 .message-section__main {
   display: grid;
   grid-template-columns: 1fr 0.9fr;
-  gap: 80px;
+  gap: 20px;
   align-items: start;
 }
 @media (max-width: 1200px) {
@@ -2448,7 +2480,6 @@ ul {
 .message-section__text {
   display: flex;
   flex-direction: column;
-  gap: 32px;
 }
 @media (max-width: 768px) {
   .message-section__text {
@@ -2481,17 +2512,18 @@ ul {
 }
 
 .message-section__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 20px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 24px;
   font-weight: 700;
   line-height: 1.6;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
+  margin-bottom: 60px;
 }
 @media (max-width: 768px) {
   .message-section__subtitle {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
 
@@ -2521,24 +2553,40 @@ ul {
 .message-section__images {
   display: grid;
   grid-template-columns: 0.9fr 1fr;
-  gap: 24px;
+  gap: 48px;
   align-items: start;
+  margin-top: 98px;
 }
 @media (max-width: 768px) {
   .message-section__images {
-    gap: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    margin-top: 40px;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 0;
   }
 }
 
 .message-section__image {
-  border-radius: 24px;
   overflow: hidden;
 }
 .message-section__image img {
   width: 100%;
   height: 100%;
+  max-width: 240px;
+  max-height: 320px;
   display: block;
   object-fit: cover;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+  .message-section__image img {
+    max-width: 174px;
+    max-height: 224px;
+    min-height: 190px;
+  }
 }
 @media (max-width: 768px) {
   .message-section__image {
@@ -2555,16 +2603,11 @@ ul {
     height: 300px;
   }
 }
-@media (max-width: 768px) {
-  .message-section__image--left {
-    height: 200px;
-  }
-}
 
 .message-section__image--right {
   width: 100%;
   height: 420px;
-  margin-top: 60px;
+  margin-top: 80px;
 }
 @media (max-width: 1200px) {
   .message-section__image--right {
@@ -2574,18 +2617,19 @@ ul {
 }
 @media (max-width: 768px) {
   .message-section__image--right {
-    height: 200px;
-    margin-top: 0;
+    display: flex;
+    justify-content: end;
   }
 }
 
 .job-list-section {
-  padding: 120px 0;
-  background: #FFFFFF;
+  padding: 160px 0;
+  background: #F8F8F8;
+  padding-top: 100px;
 }
 @media (max-width: 768px) {
   .job-list-section {
-    padding: 80px 0;
+    padding: 60px 0;
   }
 }
 
@@ -2602,38 +2646,39 @@ ul {
 }
 
 .job-list-section__line {
-  width: 44px;
+  max-width: 44px;
   height: 1px;
   background: #00202F;
+  animation: lineGrowLoop 8s ease-in-out infinite;
 }
 @media (max-width: 768px) {
   .job-list-section__line {
-    width: 32px;
+    max-width: 32px;
   }
 }
 
 .job-list-section__label {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
 }
 @media (max-width: 768px) {
   .job-list-section__label {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
 .job-list-section__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 68px;
-  font-weight: 700;
+  font-size: 60px;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: #00202F;
-  margin: 0 0 60px;
+  margin: 0 0 80px;
 }
 @media (max-width: 1024px) {
   .job-list-section__title {
@@ -2642,7 +2687,8 @@ ul {
 }
 @media (max-width: 768px) {
   .job-list-section__title {
-    font-size: 48px;
+    font-size: 60px;
+    font-weight: 900;
     margin-bottom: 40px;
   }
 }
@@ -2663,10 +2709,14 @@ ul {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 32, 47, 0.08);
   overflow: hidden;
+  display: flex;
+  padding: 40px;
 }
 @media (max-width: 768px) {
   .job-card {
     border-radius: 12px;
+    flex-direction: column;
+    padding: 28px;
   }
 }
 
@@ -2674,9 +2724,9 @@ ul {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  gap: 40px;
+  max-width: 348px;
+  min-width: 348px;
   width: 100%;
-  padding: 48px 60px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -2685,8 +2735,9 @@ ul {
 }
 @media (max-width: 768px) {
   .job-card__header {
-    padding: 24px 28px;
     gap: 16px;
+    max-width: 100%;
+    min-width: 100%;
   }
 }
 .job-card__header:hover {
@@ -2720,16 +2771,18 @@ ul {
 }
 
 .job-card__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
+  padding-left: 34px;
 }
 @media (max-width: 768px) {
   .job-card__subtitle {
-    font-size: 14px;
+    font-size: 13px;
+    padding-left: 24px;
   }
 }
 
@@ -2743,15 +2796,12 @@ ul {
 }
 @media (max-width: 768px) {
   .job-card__toggle {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 
 .job-card__content {
-  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding: 0 60px 48px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
@@ -2774,14 +2824,18 @@ ul {
   .job-card__content {
     grid-template-columns: 1fr;
     gap: 16px;
-    padding: 0 28px;
+  }
+  .job-card__content p {
+    margin-bottom: 12px;
+  }
+  .job-card__content p:last-child {
+    margin-bottom: 0;
   }
 }
 
 @media (min-width: 769px) {
   .job-card__header {
     cursor: default;
-    padding-bottom: 32px;
   }
   .job-card__header:hover {
     background: transparent;
@@ -2797,29 +2851,31 @@ ul {
 @media (max-width: 768px) {
   .job-card__header[aria-expanded=true] + .job-card__content {
     max-height: 2000px;
-    padding-top: 16px;
-    padding-bottom: 24px;
+    padding-top: 24px;
   }
 }
 .contact-hero {
-  min-height: calc(100vh - 112px);
   display: flex;
   align-items: center;
-  padding: 80px 0 60px;
+  padding: 80px 0 0;
   background: #FFFFFF;
   position: relative;
 }
 @media (max-width: 768px) {
   .contact-hero {
     min-height: auto;
-    padding: 60px 0 48px;
+    padding: 40px 0 0;
   }
+}
+
+.desktop_contact_form_section .container {
+  max-width: none;
+  width: 92%;
 }
 
 .contact-hero__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
   align-items: center;
 }
 @media (max-width: 1024px) {
@@ -2837,19 +2893,21 @@ ul {
 .contact-hero__text {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 @media (max-width: 768px) {
   .contact-hero__text {
     order: 2;
     text-align: center;
+    position: relative;
+    top: -75px;
   }
 }
 
 .contact-hero__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 92px;
-  font-weight: 700;
+  font-size: 100px;
+  font-weight: 900;
   line-height: 1.2;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -2862,14 +2920,14 @@ ul {
 }
 @media (max-width: 768px) {
   .contact-hero__title {
-    font-size: 68px;
+    font-size: 72px;
   }
 }
 
 .contact-hero__subtitle {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 800;
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
@@ -2887,6 +2945,7 @@ ul {
   align-items: center;
   border-radius: 24px;
   overflow: hidden;
+  max-width: 560px;
 }
 @media (max-width: 768px) {
   .contact-hero__image {
@@ -2900,6 +2959,13 @@ ul {
   max-width: 100%;
   object-fit: cover;
   display: block;
+}
+@media (max-width: 768px) {
+  .contact-hero__image img {
+    border-radius: 16px;
+    width: 340px;
+    height: 200px;
+  }
 }
 
 .contact-content {
@@ -2918,11 +2984,13 @@ ul {
   gap: 24px;
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 80px;
+  padding-top: 160px;
+  padding-bottom: 160px;
 }
 @media (max-width: 768px) {
   .contact-content__text {
     padding-top: 8px;
+    padding-bottom: 0;
   }
 }
 .contact-content__text p {
@@ -2958,13 +3026,22 @@ ul {
   margin: 0;
 }
 
+.sp_contact_form_section {
+  display: none;
+}
+@media (max-width: 768px) {
+  .sp_contact_form_section {
+    display: block;
+  }
+}
+
 .contact-form-section {
   padding: 80px 0 120px;
   background: #FFFFFF;
 }
 @media (max-width: 768px) {
   .contact-form-section {
-    padding: 60px 0 80px;
+    padding: 0 0 80px;
   }
 }
 
@@ -2987,13 +3064,13 @@ ul {
   grid-template-columns: 250px 1fr;
   gap: 48px;
   align-items: flex-start;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 }
 @media (max-width: 768px) {
   .form-group {
     grid-template-columns: 1fr;
     gap: 8px;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
 }
 
@@ -3013,6 +3090,8 @@ ul {
     font-size: 14px;
     padding-top: 0;
     align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
   }
 }
 
@@ -3031,7 +3110,6 @@ ul {
 @media (max-width: 768px) {
   .form-required {
     font-size: 10px;
-    padding: 4px 6px;
   }
 }
 
@@ -3060,6 +3138,8 @@ ul {
   border: 1px solid rgba(0, 32, 47, 0.15);
   border-radius: 8px;
   padding: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
   transition: all 0.3s ease;
 }
 .form-input:focus,
@@ -3089,6 +3169,8 @@ ul {
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 48px;
+  padding-top: 22px;
+  padding-bottom: 22px;
   cursor: pointer;
 }
 
@@ -3161,7 +3243,7 @@ ul {
 }
 @media (max-width: 768px) {
   .form-checkbox label {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
@@ -3176,6 +3258,12 @@ ul {
 }
 .form-link:hover {
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .contact_form_submit {
+    width: 68% !important;
+  }
 }
 
 .form-submit {

@@ -1170,7 +1170,12 @@ ul {
 }
 .services-hero__image img {
   width: 100%;
-  max-width: 300px;
+  max-width: 560px;
+}
+@media (max-width: 768px) {
+  .services-hero__image img {
+    max-width: 300px;
+  }
 }
 
 .about-hero__navigation-wrapper {

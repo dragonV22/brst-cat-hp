@@ -3131,6 +3131,7 @@ ul {
   background: #F8F8F8;
   padding: 60px;
   padding-inline: 84px;
+  padding-top: 0;
   border-radius: 16px;
 }
 @media (max-width: 768px) {

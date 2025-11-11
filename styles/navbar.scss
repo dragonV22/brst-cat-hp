@@ -3359,6 +3359,7 @@ ul {
     background: $color-bg;
     padding: $spacing-unit * 15; // 60px
     padding-inline: 84px;
+    padding-top: 0;
     border-radius: $spacing-unit * 4; // 16px
     
     @media (max-width: 768px) {

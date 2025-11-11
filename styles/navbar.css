@@ -2094,6 +2094,8 @@ ul {
   width: 32px;
   height: 1px;
   background: #00202F;
+  transform-origin: left center;
+  animation: lineGrowLoopCentered 4s infinite alternate;
 }
 @media (max-width: 768px) {
   .points-section__label {
@@ -2500,6 +2502,14 @@ ul {
   }
   100% {
     transform: scaleX(1);
+  }
+}
+@keyframes lineGrowLoopCentered {
+  0% {
+    transform: translateY(-50%) scaleX(0);
+  }
+  100% {
+    transform: translateY(-50%) scaleX(1);
   }
 }
 .message-section__line {
@@ -3420,6 +3430,8 @@ ul {
   width: 32px;
   height: 1px;
   background: #00202F;
+  transform-origin: left center;
+  animation: lineGrowLoopCentered 4s infinite alternate;
 }
 @media (max-width: 768px) {
   .plan-section__label {

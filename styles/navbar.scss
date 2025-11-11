@@ -2714,17 +2714,19 @@ ul {
 
 @keyframes lineGrowLoop {
     0% {
-        width: 0%;
+        transform: scaleX(0);
     }
     100% {
-        width: 100%;
+        transform: scaleX(1);
     }
 }
 
 .message-section__line {
     max-width: $spacing-unit * 11; // 44px max width
+    width: 100%; // Keep full width to prevent layout shift
     height: 1px;    
     background: $color-text;
+    transform-origin: left; // Grow from left to right
     animation: lineGrowLoop 4s infinite alternate;
     
     @media (max-width: 768px) {
@@ -2945,8 +2947,10 @@ ul {
 
 .job-list-section__line {
     max-width: $spacing-unit * 11; // 44px max width
+    width: 100%; // Keep full width to prevent layout shift
     height: 1px;
     background: $color-text;
+    transform-origin: left; // Grow from left to right
     animation: lineGrowLoop 4s infinite alternate;
     
     @media (max-width: 768px) {

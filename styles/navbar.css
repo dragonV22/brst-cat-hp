@@ -2496,16 +2496,18 @@ ul {
 
 @keyframes lineGrowLoop {
   0% {
-    width: 0%;
+    transform: scaleX(0);
   }
   100% {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 .message-section__line {
   max-width: 44px;
+  width: 100%;
   height: 1px;
   background: #00202F;
+  transform-origin: left;
   animation: lineGrowLoop 4s infinite alternate;
 }
 @media (max-width: 768px) {
@@ -2728,8 +2730,10 @@ ul {
 
 .job-list-section__line {
   max-width: 44px;
+  width: 100%;
   height: 1px;
   background: #00202F;
+  transform-origin: left;
   animation: lineGrowLoop 4s infinite alternate;
 }
 @media (max-width: 768px) {

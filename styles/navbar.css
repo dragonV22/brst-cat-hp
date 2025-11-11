@@ -3916,15 +3916,15 @@ ul {
 }
 @media (max-width: 768px) {
   .privacy-hero__title {
-    font-size: 48px;
-    margin-bottom: 32px;
+    font-size: 44px;
+    margin-bottom: 12px;
   }
 }
 
 .privacy-hero__subtitle {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.1em;
   color: #00202F;
   margin: 0;
@@ -3932,6 +3932,7 @@ ul {
 @media (max-width: 768px) {
   .privacy-hero__subtitle {
     font-size: 16px;
+    text-align: center;
   }
 }
 
@@ -3966,7 +3967,7 @@ ul {
   }
 }
 .privacy-content__text h2 {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 0.05em;

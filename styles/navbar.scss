@@ -4132,21 +4132,22 @@ ul {
     line-height: 1.2;
     
     @media (max-width: 768px) {
-        font-size: 48px;
-        margin-bottom: $spacing-unit * 8; // 32px
+        font-size: 44px;
+        margin-bottom: $spacing-unit * 3; // 32px
     }
 }
 
 .privacy-hero__subtitle {
     font-family: $font-base;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.1em;
     color: $color-text;
     margin: 0;
     
     @media (max-width: 768px) {
         font-size: 16px;
+        text-align: center;
     }
 }
 
@@ -4180,7 +4181,7 @@ ul {
     }
     
     h2 {
-        font-family: $font-title;
+        font-family: $font-base;
         font-size: 24px;
         font-weight: 600;
         letter-spacing: $letter-spacing-title;

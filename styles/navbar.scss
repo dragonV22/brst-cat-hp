@@ -873,7 +873,7 @@ ul {
 
 .services {
     padding: $spacing-unit * 30 0; // 120px
-    background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+    background: linear-gradient(135deg, #FFFFFF 0%, #ffffff 100%);
     position: relative;
     
     @media (max-width: 768px) {
@@ -1049,7 +1049,7 @@ ul {
         width: 502px;
         height: auto;
         // max-widt/h: 700px;
-        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+        // filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
         
         @media (max-width: 768px) {
             max-width: 100%;

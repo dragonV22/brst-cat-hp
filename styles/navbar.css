@@ -703,7 +703,7 @@ ul {
 
 .services {
   padding: 120px 0;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #ffffff 100%);
   position: relative;
 }
 @media (max-width: 768px) {
@@ -887,7 +887,6 @@ ul {
 .services__right img {
   width: 502px;
   height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
 }
 @media (max-width: 768px) {
   .services__right img {

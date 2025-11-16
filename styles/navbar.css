@@ -44,14 +44,14 @@ ul {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 40px;
 }
 @media (max-width: 1600px) {
   .container {
-    max-width: 1280px;
-    padding: 0 40px;
+    max-width: 1440px;
+    padding: 0 80px;
   }
 }
 @media (max-width: 1280px) {
@@ -82,7 +82,7 @@ ul {
   line-height: 0;
 }
 .navbar__logo img {
-  height: 48px;
+  height: 32px;
   width: auto;
 }
 @media (max-width: 768px) {
@@ -94,7 +94,6 @@ ul {
 .navbar__menu {
   background: #F8F8F8;
   border-radius: 60px;
-  padding: 8px;
   box-shadow: 8px 8px 20px rgba(220, 220, 220, 0.8), -8px -8px 20px rgba(255, 255, 255, 0.9);
 }
 @media (max-width: 768px) {
@@ -148,9 +147,9 @@ ul {
 .navbar__link {
   display: inline-block;
   padding: 20px 0;
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 17px;
-  font-weight: 500;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
   letter-spacing: 0.05em;
   color: #00202F;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -627,9 +626,9 @@ ul {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 20px 40px;
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 17px;
+  padding: 16.45px 60.3px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -652,11 +651,11 @@ ul {
 .btn-neumorphic::before {
   content: "";
   position: absolute;
-  left: 28px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   background: #00202F;
   border-radius: 50%;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -693,7 +692,7 @@ ul {
 }
 @media (max-width: 768px) {
   .btn-neumorphic {
-    width: 70%;
+    width: 56%;
     padding: 18px 48px;
   }
   .btn-neumorphic::before {
@@ -702,7 +701,7 @@ ul {
 }
 
 .services {
-  padding: 120px 0;
+  padding: 240px 0;
   background: linear-gradient(135deg, #FFFFFF 0%, #ffffff 100%);
   position: relative;
 }
@@ -853,6 +852,11 @@ ul {
   flex-direction: column;
   gap: 16px;
 }
+@media (max-width: 768px) {
+  .services__description {
+    gap: 0;
+  }
+}
 .services__description p {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 14px;
@@ -865,6 +869,7 @@ ul {
 @media (max-width: 768px) {
   .services__description p {
     font-size: 15px;
+    line-height: 2;
   }
 }
 
@@ -895,7 +900,7 @@ ul {
 }
 
 .cards {
-  padding: 120px 0;
+  padding: 80px 0;
   background: #F8F8F8;
 }
 @media (max-width: 768px) {
@@ -907,28 +912,30 @@ ul {
 .cards__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
+  padding-inline: 80px;
 }
 @media (max-width: 1024px) {
   .cards__content {
     gap: 48px;
+    padding-inline: 20px;
   }
 }
 @media (max-width: 768px) {
   .cards__content {
     grid-template-columns: 1fr;
     gap: 48px;
+    padding-inline: 0;
   }
 }
 
 .card {
   background: #F8F8F8;
   border-radius: 40px;
-  padding: 80px;
   box-shadow: 20px 20px 40px rgba(230, 230, 230, 0.8), -20px -20px 40px rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
   position: relative;
-  min-height: 400px;
+  min-height: 288px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -945,10 +952,7 @@ ul {
 .card:hover .btn-circle {
   background: #F8F8F8;
 }
-.card:hover .btn-circle svg {
-  stroke: #00202F;
-}
-.card:hover .btn-circle svg .cls-1 {
+.card:hover .btn-circle svg path {
   stroke: #00202F;
 }
 @media (max-width: 1024px) {
@@ -960,7 +964,7 @@ ul {
 @media (max-width: 768px) {
   .card {
     padding: 28px;
-    min-height: 240px;
+    min-height: 200px;
   }
 }
 
@@ -969,22 +973,22 @@ ul {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
 }
 @media (max-width: 768px) {
   .card__content {
-    gap: 12px;
+    gap: 0;
   }
 }
 
 .card__title {
   font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 64px;
+  font-size: 60px;
   font-weight: 800;
   color: #00202F;
   letter-spacing: 0.05em;
   line-height: 1;
   margin: 0;
+  margin-bottom: 12px;
 }
 @media (max-width: 1200px) {
   .card__title {
@@ -1004,7 +1008,7 @@ ul {
 
 .card__subtitle {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
   color: #00202F;
   letter-spacing: 0.07em;
@@ -1025,17 +1029,17 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 32px;
+  margin-top: 48px;
 }
 @media (max-width: 768px) {
   .card__button {
-    margin-top: 8px;
+    margin-top: 20px;
   }
 }
 
 .btn-circle {
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #00202F;
   display: flex;
@@ -1049,19 +1053,21 @@ ul {
 .btn-circle svg {
   width: 32px;
   height: 32px;
-  stroke-width: 2.5;
+  stroke-width: 1;
+}
+.btn-circle svg path {
+  transition: stroke 0.3s ease;
 }
 .btn-circle:hover {
   transform: scale(1.05);
-  background: #1a3d51;
 }
 .btn-circle:active {
   transform: scale(0.98);
 }
 @media (max-width: 768px) {
   .btn-circle {
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
   }
   .btn-circle svg {
     width: 24px;
@@ -1308,8 +1314,8 @@ ul {
 }
 
 .about-nav__button-text {
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
-  font-size: 17px;
+  font-family: "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -1331,8 +1337,9 @@ ul {
 .about-nav__button-icon {
   width: 16px;
   height: 18px;
-  position: relative;
+  position: absolute;
   z-index: 1;
+  right: 12px;
 }
 .about-nav__button-icon path {
   stroke: #00202F;
@@ -1980,6 +1987,9 @@ ul {
   .debite-section__title {
     font-size: 48px;
   }
+  .debite-section__title svg {
+    width: 231px;
+  }
 }
 
 .debite-section__tagline {
@@ -2017,6 +2027,11 @@ ul {
   flex-direction: column;
   gap: 12px;
 }
+@media (max-width: 768px) {
+  .debite-section__description {
+    gap: 0;
+  }
+}
 .debite-section__description p {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 14px;
@@ -2029,6 +2044,7 @@ ul {
 @media (max-width: 768px) {
   .debite-section__description p {
     font-size: 15px;
+    line-height: 2;
   }
 }
 
@@ -2094,7 +2110,7 @@ ul {
   height: 1px;
   background: #00202F;
   transform-origin: left center;
-  animation: lineGrowLoopCentered 4s infinite alternate;
+  animation: lineGrowLoopCentered 1s infinite alternate;
 }
 @media (max-width: 768px) {
   .points-section__label {
@@ -2184,16 +2200,11 @@ ul {
     font-size: 22px;
   }
 }
-@media (max-width: 768px) {
-  .point-card__title {
-    font-size: 20px;
-  }
-}
 
 .point-card__subtitle {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.05em;
   color: #00202F;
@@ -2202,7 +2213,7 @@ ul {
 }
 @media (max-width: 768px) {
   .point-card__subtitle {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
@@ -2492,6 +2503,7 @@ ul {
 @media (max-width: 768px) {
   .message-section__header {
     margin-bottom: 40px;
+    gap: 12px;
   }
 }
 
@@ -2517,11 +2529,11 @@ ul {
   height: 1px;
   background: #00202F;
   transform-origin: left;
-  animation: lineGrowLoop 4s infinite alternate;
+  animation: lineGrowLoop 1s infinite alternate;
 }
 @media (max-width: 768px) {
   .message-section__line {
-    max-width: 32px;
+    max-width: 44px;
   }
 }
 
@@ -2623,6 +2635,11 @@ ul {
   flex-direction: column;
   gap: 24px;
 }
+@media (max-width: 768px) {
+  .message-section__description {
+    gap: 0;
+  }
+}
 .message-section__description p {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 14px;
@@ -2635,6 +2652,7 @@ ul {
 @media (max-width: 768px) {
   .message-section__description p {
     font-size: 13px;
+    line-height: 2;
   }
   .message-section__description p br {
     display: none;
@@ -2734,6 +2752,7 @@ ul {
 @media (max-width: 768px) {
   .job-list-section__header {
     margin-bottom: 24px;
+    gap: 12px;
   }
 }
 
@@ -2743,11 +2762,11 @@ ul {
   height: 1px;
   background: #00202F;
   transform-origin: left;
-  animation: lineGrowLoop 4s infinite alternate;
+  animation: lineGrowLoop 1s infinite alternate;
 }
 @media (max-width: 768px) {
   .job-list-section__line {
-    max-width: 32px;
+    max-width: 44px;
   }
 }
 
@@ -2852,6 +2871,8 @@ ul {
   letter-spacing: 0.05em;
   color: #00202F;
   margin: 0;
+  display: inline-flex;
+  align-items: center;
 }
 @media (max-width: 1024px) {
   .job-card__title {
@@ -2862,6 +2883,11 @@ ul {
   .job-card__title {
     font-size: 32px;
   }
+}
+
+.job-card__bullet {
+  font-size: 18px;
+  margin-right: 6px;
 }
 
 .job-card__subtitle {
@@ -3355,20 +3381,29 @@ ul {
   text-decoration: none;
 }
 
+.contact_form_submit {
+  position: relative;
+}
+.contact_form_submit span {
+  font-size: 14px;
+}
 @media (max-width: 768px) {
   .contact_form_submit {
-    width: 68% !important;
+    width: 73% !important;
   }
 }
 
 .form-submit {
   margin: 0 auto;
-  min-width: 300px;
+  min-width: 228px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .form-submit svg {
   width: 20px;
   height: 20px;
-  position: relative;
+  position: absolute;
+  right: 16px;
   z-index: 2;
   transition: transform 0.3s ease;
 }
@@ -3379,7 +3414,7 @@ ul {
   .form-submit {
     min-width: auto;
     width: 100%;
-    padding: 16px 32px;
+    padding: 19.5px 32px;
   }
   .form-submit svg {
     width: 18px;
@@ -3430,7 +3465,7 @@ ul {
   height: 1px;
   background: #00202F;
   transform-origin: left center;
-  animation: lineGrowLoopCentered 4s infinite alternate;
+  animation: lineGrowLoopCentered 1s infinite alternate;
 }
 @media (max-width: 768px) {
   .plan-section__label {
@@ -3688,7 +3723,7 @@ ul {
 .plan-deposit__example {
   font-family: "Yu Gothic", "YuGothic", sans-serif;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.7;
   letter-spacing: 0.07em;
   color: #00202F;
@@ -3697,6 +3732,7 @@ ul {
 @media (max-width: 768px) {
   .plan-deposit__example {
     font-size: 13px;
+    font-weight: 600;
   }
 }
 
@@ -3798,7 +3834,7 @@ ul {
 }
 @media (max-width: 768px) {
   .footer__logo img {
-    height: 32px;
+    height: 30px;
   }
 }
 
@@ -3844,26 +3880,17 @@ ul {
 .footer__nav-link:hover {
   opacity: 0.7;
 }
-@media (max-width: 768px) {
-  .footer__nav-link {
-    font-size: 17px;
-    font-weight: 600;
-  }
-}
 
 .footer__bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 40px;
-  border-top: 1px solid rgb(0, 32, 47);
 }
 @media (max-width: 768px) {
   .footer__bottom {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-top: 32px;
   }
 }
 
@@ -3895,7 +3922,7 @@ ul {
 }
 @media (max-width: 768px) {
   .footer__copyright p {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -3909,8 +3936,9 @@ ul {
 }
 @media (max-width: 768px) {
   .privacy-hero {
-    padding: 100px 0;
-    min-height: 50vh;
+    padding: 80px 0;
+    min-height: unset;
+    padding-top: 60px;
   }
 }
 
@@ -4070,13 +4098,17 @@ ul {
     font-size: 15px;
   }
 }
-.contact-info .contact-info__email {
-  color: #C94545;
-  font-weight: 500;
-}
 @media (max-width: 768px) {
   .contact-info .contact-info__email {
     word-break: break-all;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-content__text_sp p {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Yu Gothic", "YuGothic", sans-serif;
   }
 }
 
@@ -4103,6 +4135,15 @@ ul {
   .privacy-footer .privacy-footer__company,
   .privacy-footer .privacy-footer__date {
     font-size: 14px;
+  }
+}
+
+.mobile-only-br {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-only-br {
+    display: inline;
   }
 }
 

@@ -150,13 +150,13 @@ ul {
 
 .container {
     width: 100%;
-    max-width: $container-pc-large; // 1440px
+    max-width: $container-pc-extra-large; // 1440px
     margin: 0 auto;
     padding: 0 $spacing-unit * 10; // 40px
     
     @media (max-width: 1600px) {
-        max-width: $container-pc-medium; // 1280px
-        padding: 0 $spacing-unit * 10; // 40px
+        max-width: $container-pc-large; // 1280px
+        padding: 0 $spacing-unit * 20; // 40px
     }
     
     @media (max-width: 1280px) {
@@ -190,7 +190,7 @@ ul {
     }
     
     img {
-        height: $spacing-unit * 12; // 48px
+        height: $spacing-unit * 8; // 30px
         width: auto;
         
         @media (max-width: 768px) {
@@ -206,7 +206,7 @@ ul {
 .navbar__menu {
     background: $color-bg;
     border-radius: $spacing-unit * 15; // 60px
-    padding: $spacing-unit * 2; // 8px
+    // padding: $spacing-unit * 2; // 8px
     box-shadow: 
         8px 8px 20px rgba(220, 220, 220, 0.8),
         -8px -8px 20px rgba(255, 255, 255, 0.9);
@@ -265,9 +265,9 @@ ul {
 .navbar__link {
     display: inline-block;
     padding: $spacing-unit * 5 0; // 20px 52px
-    font-family: $font-title;
-    font-size: 17px;
-    font-weight: 500;
+    font-family: $font-base;
+    font-size: 12px;
+    font-weight: 700;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -772,9 +772,9 @@ ul {
     align-items: center;
     justify-content: center;
     gap: $spacing-unit * 2; // 8px gap between elements
-    padding: $spacing-unit * 5 $spacing-unit * 10; // 20px 40px
-    font-family: $font-title;
-    font-size: 17px;
+    padding: $spacing-unit * 4.1125 $spacing-unit * 15.075; // 16.45px 60.3px
+    font-family: $font-base;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -800,11 +800,11 @@ ul {
     &::before {
         content: '';
         position: absolute;
-        left: $spacing-unit * 7; // 28px from left
+        left: $spacing-unit * 5; // 28px from left
         top: 50%;
         transform: translateY(-50%);
-        width: $spacing-unit * 2; // 8px dot
-        height: $spacing-unit * 2; // 8px dot
+        width: $spacing-unit * 1; // 8px dot
+        height: $spacing-unit * 1; // 8px dot
         background: $color-text;
         border-radius: 50%;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -858,7 +858,7 @@ ul {
     }
     
     @media (max-width: 768px) {
-        width: 70%;
+        width: 56%;
         padding: $spacing-unit * 4.5 $spacing-unit * 12; // 18px 48px
         
         &::before {
@@ -872,7 +872,7 @@ ul {
 // ===============================================
 
 .services {
-    padding: $spacing-unit * 30 0; // 120px
+    padding: $spacing-unit * 60 0; // 120px
     background: linear-gradient(135deg, #FFFFFF 0%, #ffffff 100%);
     position: relative;
     
@@ -1014,6 +1014,10 @@ ul {
     display: flex;
     flex-direction: column;
     gap: $spacing-unit * 4; // 16px
+
+    @media (max-width: 768px) {
+        gap: 0;
+    }
     
     p {
         font-family: $font-base;
@@ -1026,6 +1030,7 @@ ul {
         
         @media (max-width: 768px) {
             font-size: 15px;
+            line-height: 2;
         }
     }
 }
@@ -1062,8 +1067,9 @@ ul {
 // ===============================================
 
 .cards {
-    padding: $spacing-unit * 30 0; // 120px
+    padding: $spacing-unit * 20 0; // 120px
     background: $color-bg;
+    // padding-bottom: $spacing-unit * 20; // 80px
     
     @media (max-width: 768px) {
         padding: $spacing-unit * 20 0; // 80px
@@ -1073,28 +1079,31 @@ ul {
 .cards__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: $spacing-unit * 15; // 60px
+    gap: $spacing-unit * 10; // 60px
+    padding-inline: $spacing-unit * 20; // 40px
     
     @media (max-width: 1024px) {
         gap: $spacing-unit * 12; // 48px
+        padding-inline: $spacing-unit * 5; // 40px
     }
     
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: $spacing-unit * 12; // 48px
+        padding-inline: 0; // 20px
     }
 }
 
 .card {
     background: $color-bg;
     border-radius: $spacing-unit * 10; // 40px
-    padding: $spacing-unit * 20; // 80px
+    // padding: $spacing-unit * 20; // 80px
     box-shadow: 
         ($spacing-unit * 5) ($spacing-unit * 5) ($spacing-unit * 10) rgba(230, 230, 230, 0.8),
         (-$spacing-unit * 5) (-$spacing-unit * 5) ($spacing-unit * 10) rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease;
     position: relative;
-    min-height: $spacing-unit * 100; // 400px
+    min-height: $spacing-unit * 72; // 400px
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1114,12 +1123,8 @@ ul {
         .btn-circle {
             background: $color-bg; // Swap arrow button to light background
             
-            svg {
+            svg path {
                 stroke: $color-text; // Swap arrow to dark color
-                
-                .cls-1 {
-                    stroke: $color-text; // Ensure arrow lines are dark
-                }
             }
         }
     }
@@ -1131,7 +1136,7 @@ ul {
     
     @media (max-width: 768px) {
         padding: $spacing-unit * 7; // 48px
-        min-height: $spacing-unit * 60; // 280px
+        min-height: $spacing-unit * 50; // 280px
     }
 }
 
@@ -1140,21 +1145,22 @@ ul {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: $spacing-unit * 8; // 32px
+    // gap: $spacing-unit * 8; // 32px
     
     @media (max-width: 768px) {
-        gap: $spacing-unit * 3; // 12px
+        gap: 0; // 12px
     }
 }
 
 .card__title {
     font-family: $font-title;
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 800;
     color: $color-text;
     letter-spacing: $letter-spacing-title;
     line-height: 1;
     margin: 0;
+    margin-bottom: $spacing-unit * 3; 
     
     @media (max-width: 1200px) {
         font-size: 56px;
@@ -1171,7 +1177,7 @@ ul {
 
 .card__subtitle {
     font-family: $font-base;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 800;
     color: $color-text;
     letter-spacing: $letter-spacing-base;
@@ -1190,16 +1196,16 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: $spacing-unit * 8; // 32px
+    margin-top: $spacing-unit * 12; // 32px
     
     @media (max-width: 768px) {
-        margin-top: $spacing-unit * 2; // 8px
+        margin-top: $spacing-unit * 5; // 8px
     }
 }
 
 .btn-circle {
-    width: $spacing-unit * 20; // 80px
-    height: $spacing-unit * 20; // 80px
+    width: $spacing-unit * 14; // 80px
+    height: $spacing-unit * 14; // 80px
     border-radius: 50%;
     background: $color-text;
     display: flex;
@@ -1213,12 +1219,15 @@ ul {
     svg {
         width: $spacing-unit * 8; // 32px
         height: $spacing-unit * 8; // 32px
-        stroke-width: 2.5;
+        stroke-width: 1;
+        
+        path {
+            transition: stroke 0.3s ease;
+        }
     }
     
     &:hover {
         transform: scale(1.05);
-        background: #1a3d51;
     }
     
     &:active {
@@ -1226,8 +1235,8 @@ ul {
     }
     
     @media (max-width: 768px) {
-        width: $spacing-unit * 16; // 64px
-        height: $spacing-unit * 16; // 64px
+        width: $spacing-unit * 10; // 64px
+        height: $spacing-unit * 10; // 64px
         
         svg {
             width: $spacing-unit * 6; // 24px
@@ -1483,8 +1492,8 @@ ul {
 }
 
 .about-nav__button-text {
-    font-family: $font-title;
-    font-size: 17px;
+    font-family: $font-base;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -1504,8 +1513,9 @@ ul {
 .about-nav__button-icon {
     width: $spacing-unit * 4; // 16px
     height: $spacing-unit * 4.5; // 18px (taller for longer arrow)
-    position: relative;
+    position: absolute;
     z-index: 1;
+    right: $spacing-unit * 3;
     
     path {
         stroke: $color-text;
@@ -2160,6 +2170,10 @@ ul {
     
     @media (max-width: 768px) {
         font-size: 48px;
+
+        svg{
+            width: 231px;
+        }
     }
 }
 
@@ -2193,6 +2207,10 @@ ul {
     display: flex;
     flex-direction: column;
     gap: $spacing-unit * 3; // 20px
+
+    @media (max-width: 768px) {
+        gap: 0;
+    }
     
     p {
         font-family: $font-base;
@@ -2205,6 +2223,7 @@ ul {
         
         @media (max-width: 768px) {
             font-size: 15px;
+            line-height: 2;
         }
     }
 }
@@ -2274,7 +2293,7 @@ ul {
         height: 1px;
         background: $color-text;
         transform-origin: left center; // Grow from left to right, maintain vertical centering
-        animation: lineGrowLoopCentered 4s infinite alternate;
+        animation: lineGrowLoopCentered 1s infinite alternate;
     }
     
     @media (max-width: 768px) {
@@ -2387,15 +2406,13 @@ ul {
         font-size: 22px;
     }
     
-    @media (max-width: 768px) {
-        font-size: 20px;
-    }
+   
 }
 
 .point-card__subtitle {
     font-family: $font-base;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.6;
     letter-spacing: $letter-spacing-title;
     color: $color-text;
@@ -2403,7 +2420,7 @@ ul {
     text-align: center;
     
     @media (max-width: 768px) {
-        font-size: 13px;
+        font-size: 16px;
     }
 }
 
@@ -2711,6 +2728,7 @@ ul {
     
     @media (max-width: 768px) {
         margin-bottom: $spacing-unit * 10; // 40px
+        gap: $spacing-unit * 3;
     }
 }
 
@@ -2738,10 +2756,10 @@ ul {
     height: 1px;    
     background: $color-text;
     transform-origin: left; // Grow from left to right
-    animation: lineGrowLoop 4s infinite alternate;
+    animation: lineGrowLoop 1s infinite alternate;
     
     @media (max-width: 768px) {
-        max-width: $spacing-unit * 8; // 32px max width
+        max-width: $spacing-unit * 11; // 44px max width
     }
 }
 
@@ -2838,6 +2856,10 @@ ul {
     display: flex;
     flex-direction: column;
     gap: $spacing-unit * 6; // 24px
+
+    @media (max-width: 768px) {
+        gap: 0;
+    }
     
     p {
         font-family: $font-base;
@@ -2850,6 +2872,7 @@ ul {
         
         @media (max-width: 768px) {
             font-size: 13px;
+            line-height: 2;
             
             br {
                 display: none;
@@ -2953,6 +2976,7 @@ ul {
     
     @media (max-width: 768px) {
         margin-bottom: $spacing-unit * 6; // 24px
+        gap: $spacing-unit * 3;
     }
 }
 
@@ -2962,10 +2986,10 @@ ul {
     height: 1px;
     background: $color-text;
     transform-origin: left; // Grow from left to right
-    animation: lineGrowLoop 4s infinite alternate;
+    animation: lineGrowLoop 1s infinite alternate;
     
     @media (max-width: 768px) {
-        max-width: $spacing-unit * 8; // 32px max width
+        max-width: $spacing-unit * 11; // 44px max width
     }
 }
 
@@ -3068,6 +3092,8 @@ ul {
     letter-spacing: $letter-spacing-title;
     color: $color-text;
     margin: 0;
+    display: inline-flex;
+    align-items: center;
     
     @media (max-width: 1024px) {
         font-size: 36px;
@@ -3076,6 +3102,11 @@ ul {
     @media (max-width: 768px) {
         font-size: 32px;
     }
+}
+
+.job-card__bullet {
+    font-size: 18px;
+    margin-right: $spacing-unit * 1.5;
 }
 
 .job-card__subtitle {
@@ -3573,21 +3604,28 @@ ul {
 }
 
 .contact_form_submit{
+    position: relative;
+    span {
+        font-size: 14px;
+    }
     
     @media (max-width: 768px) {
-      width: 68% !important;
+      width: 73% !important;
     }
 
 }
 
 .form-submit {
     margin: 0 auto;
-    min-width: 300px;
+    min-width: 228px;
+    padding-top: $spacing-unit * 5;
+    padding-bottom: $spacing-unit * 5;
     
     svg {
         width: 20px;
         height: 20px;
-        position: relative;
+        position: absolute;
+        right: $spacing-unit * 4;
         z-index: 2;
         transition: transform 0.3s ease;
     }
@@ -3601,7 +3639,7 @@ ul {
     @media (max-width: 768px) {
         min-width: auto;
         width: 100%;
-        padding: $spacing-unit * 4 $spacing-unit * 8; // 16px 32px
+        padding: $spacing-unit * 4.875 $spacing-unit * 8; // 16px 32px
         
         svg {
             width: 18px;
@@ -3655,7 +3693,7 @@ ul {
         height: 1px;
         background: $color-text;
         transform-origin: left center; // Grow from left to right, maintain vertical centering
-        animation: lineGrowLoopCentered 4s infinite alternate;
+        animation: lineGrowLoopCentered 1s infinite alternate;
     }
     
     @media (max-width: 768px) {
@@ -3903,7 +3941,7 @@ ul {
 .plan-deposit__example {
     font-family: $font-base;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.7;
     letter-spacing: $letter-spacing-base;
     color: $color-text;
@@ -3911,6 +3949,7 @@ ul {
     
     @media (max-width: 768px) {
         font-size: 13px;
+        font-weight: 600;
     }
 }
 
@@ -4015,7 +4054,7 @@ ul {
         width: auto;
         
         @media (max-width: 768px) {
-            height: $spacing-unit * 8; // 44px - larger on mobile
+            height: $spacing-unit * 7.5; // 30px - larger on mobile
         }
     }
 }
@@ -4061,24 +4100,21 @@ ul {
         opacity: 0.7;
     }
     
-    @media (max-width: 768px) {
-        font-size: 17px;
-        font-weight: 600;
-    }
+   
 }
 
 .footer__bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: $spacing-unit * 10; // 40px
-    border-top: 1px solid rgba(0, 32, 47, 1);
+    // padding-top: $spacing-unit * 10; // 40px
+    // border-top: 1px solid rgba(0, 32, 47, 1);
     
     @media (max-width: 768px) {
         flex-direction: row; // Keep horizontal on mobile
         justify-content: space-between;
         align-items: center;
-        padding-top: $spacing-unit * 8; // 32px
+        // padding-top: $spacing-unit * 8; // 32px
     }
 }
 
@@ -4110,7 +4146,7 @@ ul {
         margin: 0;
         
         @media (max-width: 768px) {
-            font-size: 13px;
+            font-size: 12px;
         }
     }
 }
@@ -4128,8 +4164,9 @@ ul {
     justify-content: center;
     
     @media (max-width: 768px) {
-        padding: $spacing-unit * 25 0; // 100px top/bottom
-        min-height: 50vh;
+        padding: $spacing-unit * 20 0; // 100px top/bottom
+        min-height: unset;
+        padding-top: $spacing-unit * 15;
     }
 }
 
@@ -4293,13 +4330,23 @@ ul {
     }
     
     .contact-info__email {
-        color: #C94545;
-        font-weight: 500;
+        // color: #C94545;
+        // font-weight: 500;
         
         @media (max-width: 768px) {
             word-break: break-all;
         }
     }
+}
+
+.contact-content__text_sp{
+   @media (max-width: 768px) {
+    p {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $font-base;
+    }
+   }
 }
 
 .privacy-footer {
@@ -4332,5 +4379,14 @@ ul {
 
 .is-active {
     // Active state for menu items
+}
+
+// Mobile-only line break
+.mobile-only-br {
+    display: none;
+    
+    @media (max-width: 768px) {
+        display: inline;
+    }
 }
 

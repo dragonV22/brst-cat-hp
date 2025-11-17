@@ -694,6 +694,7 @@ ul {
   .btn-neumorphic {
     width: 56%;
     padding: 18px 48px;
+    font-size: 16px;
   }
   .btn-neumorphic::before {
     left: 20px;
@@ -2886,8 +2887,23 @@ ul {
 }
 
 .job-card__bullet {
-  font-size: 18px;
+  font-size: 26px;
   margin-right: 6px;
+}
+@media (max-width: 1440px) {
+  .job-card__bullet {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .job-card__bullet {
+    font-size: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .job-card__bullet {
+    font-size: 18px;
+  }
 }
 
 .job-card__subtitle {
@@ -3946,6 +3962,11 @@ ul {
   text-align: start;
   max-width: 900px;
   margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .privacy-hero__content {
+    text-align: center;
+  }
 }
 
 .privacy-hero__title {

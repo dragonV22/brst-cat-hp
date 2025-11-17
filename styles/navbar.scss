@@ -860,6 +860,7 @@ ul {
     @media (max-width: 768px) {
         width: 56%;
         padding: $spacing-unit * 4.5 $spacing-unit * 12; // 18px 48px
+        font-size: 16px;
         
         &::before {
             left: $spacing-unit * 5; // 20px from left on mobile
@@ -3105,8 +3106,20 @@ ul {
 }
 
 .job-card__bullet {
-    font-size: 18px;
+    font-size: 26px;
     margin-right: $spacing-unit * 1.5;
+
+    @media (max-width: 1440px) {
+        font-size: 24px;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
 }
 
 .job-card__subtitle {
@@ -4174,6 +4187,11 @@ ul {
     text-align: start;
     max-width: 900px;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+        text-align: center;
+        
+    }
 }
 
 .privacy-hero__title {
